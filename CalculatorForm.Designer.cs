@@ -23,6 +23,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             lblXParam = new Label();
             txtXParam = new TextBox();
             lblYParam = new Label();
@@ -40,6 +41,12 @@
             btnConvertGeocentric = new Button();
             groupInputs = new GroupBox();
             groupOutputs = new GroupBox();
+            lblAltOutput = new Label();
+            lblLngOutput = new Label();
+            lblLatOutput = new Label();
+            txtAltOutput = new TextBox();
+            txtLngOutput = new TextBox();
+            txtLatOutput = new TextBox();
             grpLatLngInputs = new GroupBox();
             txtAltParam = new TextBox();
             lblAltParam = new Label();
@@ -48,12 +55,6 @@
             txtLatParam = new TextBox();
             lblLatParam = new Label();
             btnConvertLatLng = new Button();
-            txtLatOutput = new TextBox();
-            txtLngOutput = new TextBox();
-            txtAltOutput = new TextBox();
-            lblLatOutput = new Label();
-            lblLngOutput = new Label();
-            lblAltOutput = new Label();
             grpAddConditions = new GroupBox();
             groupInputs.SuspendLayout();
             groupOutputs.SuspendLayout();
@@ -219,6 +220,54 @@
             groupOutputs.TabStop = false;
             groupOutputs.Text = "Outputs";
             // 
+            // lblAltOutput
+            // 
+            lblAltOutput.AutoSize = true;
+            lblAltOutput.Location = new Point(10, 203);
+            lblAltOutput.Name = "lblAltOutput";
+            lblAltOutput.Size = new Size(52, 15);
+            lblAltOutput.TabIndex = 22;
+            lblAltOutput.Text = "Altitude:";
+            // 
+            // lblLngOutput
+            // 
+            lblLngOutput.AutoSize = true;
+            lblLngOutput.Location = new Point(32, 174);
+            lblLngOutput.Name = "lblLngOutput";
+            lblLngOutput.Size = new Size(30, 15);
+            lblLngOutput.TabIndex = 21;
+            lblLngOutput.Text = "Lng:";
+            // 
+            // lblLatOutput
+            // 
+            lblLatOutput.AutoSize = true;
+            lblLatOutput.Location = new Point(36, 145);
+            lblLatOutput.Name = "lblLatOutput";
+            lblLatOutput.Size = new Size(26, 15);
+            lblLatOutput.TabIndex = 20;
+            lblLatOutput.Text = "Lat:";
+            // 
+            // txtAltOutput
+            // 
+            txtAltOutput.Location = new Point(68, 200);
+            txtAltOutput.Name = "txtAltOutput";
+            txtAltOutput.Size = new Size(100, 23);
+            txtAltOutput.TabIndex = 19;
+            // 
+            // txtLngOutput
+            // 
+            txtLngOutput.Location = new Point(68, 171);
+            txtLngOutput.Name = "txtLngOutput";
+            txtLngOutput.Size = new Size(100, 23);
+            txtLngOutput.TabIndex = 17;
+            // 
+            // txtLatOutput
+            // 
+            txtLatOutput.Location = new Point(68, 142);
+            txtLatOutput.Name = "txtLatOutput";
+            txtLatOutput.Size = new Size(100, 23);
+            txtLatOutput.TabIndex = 16;
+            // 
             // grpLatLngInputs
             // 
             grpLatLngInputs.Controls.Add(txtAltParam);
@@ -292,54 +341,6 @@
             btnConvertLatLng.UseVisualStyleBackColor = true;
             btnConvertLatLng.Click += btnConvertLatLng_Click;
             // 
-            // txtLatOutput
-            // 
-            txtLatOutput.Location = new Point(68, 142);
-            txtLatOutput.Name = "txtLatOutput";
-            txtLatOutput.Size = new Size(100, 23);
-            txtLatOutput.TabIndex = 16;
-            // 
-            // txtLngOutput
-            // 
-            txtLngOutput.Location = new Point(68, 171);
-            txtLngOutput.Name = "txtLngOutput";
-            txtLngOutput.Size = new Size(100, 23);
-            txtLngOutput.TabIndex = 17;
-            // 
-            // txtAltOutput
-            // 
-            txtAltOutput.Location = new Point(68, 200);
-            txtAltOutput.Name = "txtAltOutput";
-            txtAltOutput.Size = new Size(100, 23);
-            txtAltOutput.TabIndex = 19;
-            // 
-            // lblLatOutput
-            // 
-            lblLatOutput.AutoSize = true;
-            lblLatOutput.Location = new Point(36, 145);
-            lblLatOutput.Name = "lblLatOutput";
-            lblLatOutput.Size = new Size(26, 15);
-            lblLatOutput.TabIndex = 20;
-            lblLatOutput.Text = "Lat:";
-            // 
-            // lblLngOutput
-            // 
-            lblLngOutput.AutoSize = true;
-            lblLngOutput.Location = new Point(32, 174);
-            lblLngOutput.Name = "lblLngOutput";
-            lblLngOutput.Size = new Size(30, 15);
-            lblLngOutput.TabIndex = 21;
-            lblLngOutput.Text = "Lng:";
-            // 
-            // lblAltOutput
-            // 
-            lblAltOutput.AutoSize = true;
-            lblAltOutput.Location = new Point(10, 203);
-            lblAltOutput.Name = "lblAltOutput";
-            lblAltOutput.Size = new Size(52, 15);
-            lblAltOutput.TabIndex = 22;
-            lblAltOutput.Text = "Altitude:";
-            // 
             // grpAddConditions
             // 
             grpAddConditions.Controls.Add(lblAddAltitude);
@@ -362,6 +363,7 @@
             Controls.Add(groupOutputs);
             Controls.Add(groupInputs);
             Controls.Add(btnConvertGeocentric);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CalculatorForm";
             Text = "Geo Calculator";
             groupInputs.ResumeLayout(false);
