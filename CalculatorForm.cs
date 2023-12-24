@@ -1,3 +1,4 @@
+using GeoCalculator.Codes.Model;
 using GeographicLib;
 
 namespace GeoCalculator {
@@ -7,45 +8,64 @@ namespace GeoCalculator {
         }
 
         private void btnConvertGencentric_Click(object sender, EventArgs e) {
-            _ = double.TryParse(txtXParam.Text, out double x);
-            _ = double.TryParse(txtYParam.Text, out double y);
-            _ = double.TryParse(txtZParam.Text, out double z);
+            _ = double.TryParse(txtConvertXParam.Text, out double x);
+            _ = double.TryParse(txtConvertYParam.Text, out double y);
+            _ = double.TryParse(txtConvertZParam.Text, out double z);
             _ = double.TryParse(txtAddAltitude.Text, out double addAltitude);
 
-            Geocentric earth = new Geocentric(Constants.WGS84_a, Constants.WGS84_f);
-            double lat, lng, altitude;
-            (lat, lng, altitude) = earth.Reverse(x, y, z);
+            var coordinates = new Coordinates();
+            coordinates.SetGeocentric(x, y, z);
 
-            double newAltitude = altitude + addAltitude;
-            double newX, newY, newZ;
-            (newX, newY, newZ) = earth.Forward(lat, lng, newAltitude);
+            if (addAltitude != 0) {
+                coordinates.SetGeodetic(coordinates.Latitude, coordinates.Longitude, coordinates.Altitude + addAltitude);
+            }
 
-            txtXOutput.Text = newX.ToString();
-            txtYOutput.Text = newY.ToString();
-            txtZOutput.Text = newZ.ToString();
-
-            txtLatOutput.Text = lat.ToString();
-            txtLngOutput.Text = lng.ToString();
-            txtAltOutput.Text = newAltitude.ToString();
+            UpdateConversionOutput(coordinates);
         }
 
         private void btnConvertLatLng_Click(object sender, EventArgs e) {
-            _ = double.TryParse(txtLatParam.Text, out double lat);
-            _ = double.TryParse(txtLngParam.Text, out double lng);
-            _ = double.TryParse(txtAltParam.Text, out double altitude);
+            _ = double.TryParse(txtConvertLatParam.Text, out double lat);
+            _ = double.TryParse(txtConvertLngParam.Text, out double lng);
+            _ = double.TryParse(txtConvertAltParam.Text, out double altitude);
             _ = double.TryParse(txtAddAltitude.Text, out double addAltitude);
             altitude += addAltitude;
 
-            Geocentric earth = new Geocentric(Constants.WGS84_a, Constants.WGS84_f);
-            var result = earth.Forward(lat, lng, altitude);
+            var coordinates = new Coordinates();
+            coordinates.SetGeodetic(lat, lng, altitude);
 
-            txtXOutput.Text = result.X.ToString();
-            txtYOutput.Text = result.Y.ToString();
-            txtZOutput.Text = result.Z.ToString();
+            UpdateConversionOutput(coordinates);
+        }
 
-            txtLatOutput.Text = lat.ToString();
-            txtLngOutput.Text = lng.ToString();
-            txtAltOutput.Text = altitude.ToString();
+        private void btnConvertDMS_Click(object sender, EventArgs e) {
+            _ = int.TryParse(txtConvertDMSLatDeg.Text, out int latDegree);
+            _ = int.TryParse(txtConvertDMSLatMin.Text, out int latMinute);
+            _ = double.TryParse(txtConvertDMSLatSec.Text, out double latSecond);
+
+            _ = int.TryParse(txtConvertDMSLngDeg.Text, out int lngDegree);
+            _ = int.TryParse(txtConvertDMSLngMin.Text, out int lngMinute);
+            _ = double.TryParse(txtConvertDMSLngSec.Text, out double lngSecond);
+
+            _ = double.TryParse(txtConvertAltParam.Text, out double altitude);
+
+            var coordinates = new Coordinates();
+            coordinates.SetDMS(latDegree, latMinute, latSecond, txtConvertDMSLatDirection.Text.Equals("N", StringComparison.InvariantCultureIgnoreCase),
+                lngDegree, lngMinute, lngSecond, txtConvertDMSLngDirection.Text.Equals("E", StringComparison.InvariantCultureIgnoreCase), 
+                altitude);
+
+            UpdateConversionOutput(coordinates);
+        }
+
+        private void UpdateConversionOutput(Coordinates coordinates) {
+            txtConvertXOutput.Text = coordinates.X.ToString();
+            txtConvertYOutput.Text = coordinates.Y.ToString();
+            txtConvertZOutput.Text = coordinates.Z.ToString();
+
+            txtConvertLatOutput.Text = coordinates.Latitude.ToString();
+            txtConvertLngOutput.Text = coordinates.Longitude.ToString();
+            txtConvertAltOutput.Text = coordinates.Altitude.ToString();
+
+            txtConvertDMSLatOutput.Text = $"{coordinates.DMSLatitudeDegree}° {coordinates.DMSLatitudeMinute}' {coordinates.DMSLatitudeSecond}\" {(coordinates.DMSLatitudeIsNorth ? "N" : "S")}";
+            txtConvertDMSLngOutput.Text = $"{coordinates.DMSLongitudeDegree}° {coordinates.DMSLongitudeMinute}' {coordinates.DMSLongitudeSecond}\" {(coordinates.DMSLongitudeIsEast ? "E" : "W")}";
         }
     }
 }
