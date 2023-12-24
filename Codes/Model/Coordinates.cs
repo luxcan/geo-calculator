@@ -1,5 +1,4 @@
 ﻿using GeoCalculator.Codes.Util;
-using GeographicLib;
 
 namespace GeoCalculator.Codes.Model {
     public class Coordinates {

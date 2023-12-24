@@ -24,12 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
-            lblConvertXParam = new Label();
-            txtConvertXParam = new TextBox();
-            lblConvertYParam = new Label();
-            txtConvertYParam = new TextBox();
-            lblConvertZParam = new Label();
-            txtConvertZParam = new TextBox();
+            lblConvertX = new Label();
+            txtConvertX = new TextBox();
+            lblConvertY = new Label();
+            txtConvertY = new TextBox();
+            lblConvertZ = new Label();
+            txtConvertZ = new TextBox();
             lblAddAltitude = new Label();
             txtAddAltitude = new TextBox();
             lblConvertXOutput = new Label();
@@ -50,12 +50,12 @@
             txtConvertLngOutput = new TextBox();
             txtConvertLatOutput = new TextBox();
             grpConvertLatLngInputs = new GroupBox();
-            txtConvertAltParam = new TextBox();
-            lblConvertAltParam = new Label();
-            txtConvertLngParam = new TextBox();
-            lblConvertLngParam = new Label();
-            txtConvertLatParam = new TextBox();
-            lblConvertLatParam = new Label();
+            txtConvertAlt = new TextBox();
+            lblConvertAlt = new Label();
+            txtConvertLng = new TextBox();
+            lblConvertLng = new Label();
+            txtConvertLat = new TextBox();
+            lblConvertLat = new Label();
             btnConvertLatLng = new Button();
             grpAddConditions = new GroupBox();
             mainTab = new TabControl();
@@ -76,6 +76,20 @@
             txtConvertDMSLatMin = new TextBox();
             lblConvertDMSLatDeg = new Label();
             txtConvertDMSLatDeg = new TextBox();
+            tabDistance = new TabPage();
+            txtDFResult = new TextBox();
+            grpDFInputs = new GroupBox();
+            btnDFCalculate = new Button();
+            txtDFDeg = new TextBox();
+            lblDFDeg = new Label();
+            txtDFDistance = new TextBox();
+            lblDFDistance = new Label();
+            txtDFX = new TextBox();
+            lblDFX = new Label();
+            lblDFZ = new Label();
+            lblDFY = new Label();
+            txtDFZ = new TextBox();
+            txtDFY = new TextBox();
             grpConvertGeocentricInputs.SuspendLayout();
             grpConvertOutputs.SuspendLayout();
             grpConvertLatLngInputs.SuspendLayout();
@@ -83,55 +97,57 @@
             mainTab.SuspendLayout();
             tabConverter.SuspendLayout();
             grpConvertDMSInputs.SuspendLayout();
+            tabDistance.SuspendLayout();
+            grpDFInputs.SuspendLayout();
             SuspendLayout();
             // 
-            // lblConvertXParam
+            // lblConvertX
             // 
-            lblConvertXParam.AutoSize = true;
-            lblConvertXParam.Location = new Point(10, 25);
-            lblConvertXParam.Name = "lblConvertXParam";
-            lblConvertXParam.Size = new Size(17, 15);
-            lblConvertXParam.TabIndex = 0;
-            lblConvertXParam.Text = "X:";
+            lblConvertX.AutoSize = true;
+            lblConvertX.Location = new Point(10, 25);
+            lblConvertX.Name = "lblConvertX";
+            lblConvertX.Size = new Size(17, 15);
+            lblConvertX.TabIndex = 0;
+            lblConvertX.Text = "X:";
             // 
-            // txtConvertXParam
+            // txtConvertX
             // 
-            txtConvertXParam.Location = new Point(33, 22);
-            txtConvertXParam.Name = "txtConvertXParam";
-            txtConvertXParam.Size = new Size(100, 23);
-            txtConvertXParam.TabIndex = 1;
+            txtConvertX.Location = new Point(33, 22);
+            txtConvertX.Name = "txtConvertX";
+            txtConvertX.Size = new Size(100, 23);
+            txtConvertX.TabIndex = 1;
             // 
-            // lblConvertYParam
+            // lblConvertY
             // 
-            lblConvertYParam.AutoSize = true;
-            lblConvertYParam.Location = new Point(10, 54);
-            lblConvertYParam.Name = "lblConvertYParam";
-            lblConvertYParam.Size = new Size(17, 15);
-            lblConvertYParam.TabIndex = 2;
-            lblConvertYParam.Text = "Y:";
+            lblConvertY.AutoSize = true;
+            lblConvertY.Location = new Point(10, 54);
+            lblConvertY.Name = "lblConvertY";
+            lblConvertY.Size = new Size(17, 15);
+            lblConvertY.TabIndex = 2;
+            lblConvertY.Text = "Y:";
             // 
-            // txtConvertYParam
+            // txtConvertY
             // 
-            txtConvertYParam.Location = new Point(33, 51);
-            txtConvertYParam.Name = "txtConvertYParam";
-            txtConvertYParam.Size = new Size(100, 23);
-            txtConvertYParam.TabIndex = 3;
+            txtConvertY.Location = new Point(33, 51);
+            txtConvertY.Name = "txtConvertY";
+            txtConvertY.Size = new Size(100, 23);
+            txtConvertY.TabIndex = 3;
             // 
-            // lblConvertZParam
+            // lblConvertZ
             // 
-            lblConvertZParam.AutoSize = true;
-            lblConvertZParam.Location = new Point(10, 83);
-            lblConvertZParam.Name = "lblConvertZParam";
-            lblConvertZParam.Size = new Size(17, 15);
-            lblConvertZParam.TabIndex = 4;
-            lblConvertZParam.Text = "Z:";
+            lblConvertZ.AutoSize = true;
+            lblConvertZ.Location = new Point(10, 83);
+            lblConvertZ.Name = "lblConvertZ";
+            lblConvertZ.Size = new Size(17, 15);
+            lblConvertZ.TabIndex = 4;
+            lblConvertZ.Text = "Z:";
             // 
-            // txtConvertZParam
+            // txtConvertZ
             // 
-            txtConvertZParam.Location = new Point(32, 80);
-            txtConvertZParam.Name = "txtConvertZParam";
-            txtConvertZParam.Size = new Size(100, 23);
-            txtConvertZParam.TabIndex = 5;
+            txtConvertZ.Location = new Point(32, 80);
+            txtConvertZ.Name = "txtConvertZ";
+            txtConvertZ.Size = new Size(100, 23);
+            txtConvertZ.TabIndex = 5;
             // 
             // lblAddAltitude
             // 
@@ -209,12 +225,12 @@
             // 
             // grpConvertGeocentricInputs
             // 
-            grpConvertGeocentricInputs.Controls.Add(txtConvertXParam);
-            grpConvertGeocentricInputs.Controls.Add(lblConvertXParam);
-            grpConvertGeocentricInputs.Controls.Add(lblConvertZParam);
-            grpConvertGeocentricInputs.Controls.Add(lblConvertYParam);
-            grpConvertGeocentricInputs.Controls.Add(txtConvertZParam);
-            grpConvertGeocentricInputs.Controls.Add(txtConvertYParam);
+            grpConvertGeocentricInputs.Controls.Add(txtConvertX);
+            grpConvertGeocentricInputs.Controls.Add(lblConvertX);
+            grpConvertGeocentricInputs.Controls.Add(lblConvertZ);
+            grpConvertGeocentricInputs.Controls.Add(lblConvertY);
+            grpConvertGeocentricInputs.Controls.Add(txtConvertZ);
+            grpConvertGeocentricInputs.Controls.Add(txtConvertY);
             grpConvertGeocentricInputs.Location = new Point(17, 12);
             grpConvertGeocentricInputs.Name = "grpConvertGeocentricInputs";
             grpConvertGeocentricInputs.Size = new Size(146, 116);
@@ -309,12 +325,12 @@
             // 
             // grpConvertLatLngInputs
             // 
-            grpConvertLatLngInputs.Controls.Add(txtConvertAltParam);
-            grpConvertLatLngInputs.Controls.Add(lblConvertAltParam);
-            grpConvertLatLngInputs.Controls.Add(txtConvertLngParam);
-            grpConvertLatLngInputs.Controls.Add(lblConvertLngParam);
-            grpConvertLatLngInputs.Controls.Add(txtConvertLatParam);
-            grpConvertLatLngInputs.Controls.Add(lblConvertLatParam);
+            grpConvertLatLngInputs.Controls.Add(txtConvertAlt);
+            grpConvertLatLngInputs.Controls.Add(lblConvertAlt);
+            grpConvertLatLngInputs.Controls.Add(txtConvertLng);
+            grpConvertLatLngInputs.Controls.Add(lblConvertLng);
+            grpConvertLatLngInputs.Controls.Add(txtConvertLat);
+            grpConvertLatLngInputs.Controls.Add(lblConvertLat);
             grpConvertLatLngInputs.Location = new Point(186, 12);
             grpConvertLatLngInputs.Name = "grpConvertLatLngInputs";
             grpConvertLatLngInputs.Size = new Size(185, 116);
@@ -322,53 +338,53 @@
             grpConvertLatLngInputs.TabStop = false;
             grpConvertLatLngInputs.Text = "Lat/Lng";
             // 
-            // txtConvertAltParam
+            // txtConvertAlt
             // 
-            txtConvertAltParam.Location = new Point(72, 80);
-            txtConvertAltParam.Name = "txtConvertAltParam";
-            txtConvertAltParam.Size = new Size(100, 23);
-            txtConvertAltParam.TabIndex = 18;
+            txtConvertAlt.Location = new Point(72, 80);
+            txtConvertAlt.Name = "txtConvertAlt";
+            txtConvertAlt.Size = new Size(100, 23);
+            txtConvertAlt.TabIndex = 18;
             // 
-            // lblConvertAltParam
+            // lblConvertAlt
             // 
-            lblConvertAltParam.AutoSize = true;
-            lblConvertAltParam.Location = new Point(14, 83);
-            lblConvertAltParam.Name = "lblConvertAltParam";
-            lblConvertAltParam.Size = new Size(52, 15);
-            lblConvertAltParam.TabIndex = 17;
-            lblConvertAltParam.Text = "Altitude:";
+            lblConvertAlt.AutoSize = true;
+            lblConvertAlt.Location = new Point(14, 83);
+            lblConvertAlt.Name = "lblConvertAlt";
+            lblConvertAlt.Size = new Size(52, 15);
+            lblConvertAlt.TabIndex = 17;
+            lblConvertAlt.Text = "Altitude:";
             // 
-            // txtConvertLngParam
+            // txtConvertLng
             // 
-            txtConvertLngParam.Location = new Point(72, 51);
-            txtConvertLngParam.Name = "txtConvertLngParam";
-            txtConvertLngParam.Size = new Size(100, 23);
-            txtConvertLngParam.TabIndex = 16;
+            txtConvertLng.Location = new Point(72, 51);
+            txtConvertLng.Name = "txtConvertLng";
+            txtConvertLng.Size = new Size(100, 23);
+            txtConvertLng.TabIndex = 16;
             // 
-            // lblConvertLngParam
+            // lblConvertLng
             // 
-            lblConvertLngParam.AutoSize = true;
-            lblConvertLngParam.Location = new Point(36, 54);
-            lblConvertLngParam.Name = "lblConvertLngParam";
-            lblConvertLngParam.Size = new Size(30, 15);
-            lblConvertLngParam.TabIndex = 6;
-            lblConvertLngParam.Text = "Lng:";
+            lblConvertLng.AutoSize = true;
+            lblConvertLng.Location = new Point(36, 54);
+            lblConvertLng.Name = "lblConvertLng";
+            lblConvertLng.Size = new Size(30, 15);
+            lblConvertLng.TabIndex = 6;
+            lblConvertLng.Text = "Lng:";
             // 
-            // txtConvertLatParam
+            // txtConvertLat
             // 
-            txtConvertLatParam.Location = new Point(72, 22);
-            txtConvertLatParam.Name = "txtConvertLatParam";
-            txtConvertLatParam.Size = new Size(100, 23);
-            txtConvertLatParam.TabIndex = 15;
+            txtConvertLat.Location = new Point(72, 22);
+            txtConvertLat.Name = "txtConvertLat";
+            txtConvertLat.Size = new Size(100, 23);
+            txtConvertLat.TabIndex = 15;
             // 
-            // lblConvertLatParam
+            // lblConvertLat
             // 
-            lblConvertLatParam.AutoSize = true;
-            lblConvertLatParam.Location = new Point(40, 25);
-            lblConvertLatParam.Name = "lblConvertLatParam";
-            lblConvertLatParam.Size = new Size(26, 15);
-            lblConvertLatParam.TabIndex = 15;
-            lblConvertLatParam.Text = "Lat:";
+            lblConvertLat.AutoSize = true;
+            lblConvertLat.Location = new Point(40, 25);
+            lblConvertLat.Name = "lblConvertLat";
+            lblConvertLat.Size = new Size(26, 15);
+            lblConvertLat.TabIndex = 15;
+            lblConvertLat.Text = "Lat:";
             // 
             // btnConvertLatLng
             // 
@@ -384,9 +400,9 @@
             // 
             grpAddConditions.Controls.Add(lblAddAltitude);
             grpAddConditions.Controls.Add(txtAddAltitude);
-            grpAddConditions.Location = new Point(653, 19);
+            grpAddConditions.Location = new Point(651, 12);
             grpAddConditions.Name = "grpAddConditions";
-            grpAddConditions.Size = new Size(211, 285);
+            grpAddConditions.Size = new Size(211, 292);
             grpAddConditions.TabIndex = 16;
             grpAddConditions.TabStop = false;
             grpAddConditions.Text = "Additional Conditions";
@@ -394,6 +410,7 @@
             // mainTab
             // 
             mainTab.Controls.Add(tabConverter);
+            mainTab.Controls.Add(tabDistance);
             mainTab.Location = new Point(12, 12);
             mainTab.Name = "mainTab";
             mainTab.SelectedIndex = 0;
@@ -561,6 +578,136 @@
             txtConvertDMSLatDeg.Size = new Size(30, 23);
             txtConvertDMSLatDeg.TabIndex = 0;
             // 
+            // tabDistance
+            // 
+            tabDistance.Controls.Add(txtDFResult);
+            tabDistance.Controls.Add(grpDFInputs);
+            tabDistance.Location = new Point(4, 24);
+            tabDistance.Name = "tabDistance";
+            tabDistance.Size = new Size(876, 314);
+            tabDistance.TabIndex = 1;
+            tabDistance.Text = "Distance From";
+            tabDistance.UseVisualStyleBackColor = true;
+            // 
+            // txtDFResult
+            // 
+            txtDFResult.Location = new Point(333, 14);
+            txtDFResult.Multiline = true;
+            txtDFResult.Name = "txtDFResult";
+            txtDFResult.ScrollBars = ScrollBars.Vertical;
+            txtDFResult.Size = new Size(527, 286);
+            txtDFResult.TabIndex = 12;
+            // 
+            // grpDFInputs
+            // 
+            grpDFInputs.Controls.Add(btnDFCalculate);
+            grpDFInputs.Controls.Add(txtDFDeg);
+            grpDFInputs.Controls.Add(lblDFDeg);
+            grpDFInputs.Controls.Add(txtDFDistance);
+            grpDFInputs.Controls.Add(lblDFDistance);
+            grpDFInputs.Controls.Add(txtDFX);
+            grpDFInputs.Controls.Add(lblDFX);
+            grpDFInputs.Controls.Add(lblDFZ);
+            grpDFInputs.Controls.Add(lblDFY);
+            grpDFInputs.Controls.Add(txtDFZ);
+            grpDFInputs.Controls.Add(txtDFY);
+            grpDFInputs.Location = new Point(14, 14);
+            grpDFInputs.Name = "grpDFInputs";
+            grpDFInputs.Size = new Size(303, 211);
+            grpDFInputs.TabIndex = 11;
+            grpDFInputs.TabStop = false;
+            grpDFInputs.Text = "Inputs";
+            // 
+            // btnDFCalculate
+            // 
+            btnDFCalculate.Location = new Point(213, 178);
+            btnDFCalculate.Name = "btnDFCalculate";
+            btnDFCalculate.Size = new Size(75, 23);
+            btnDFCalculate.TabIndex = 15;
+            btnDFCalculate.Text = "Calculate";
+            btnDFCalculate.UseVisualStyleBackColor = true;
+            btnDFCalculate.Click += btnDFCalculate_Click;
+            // 
+            // txtDFDeg
+            // 
+            txtDFDeg.Location = new Point(130, 140);
+            txtDFDeg.Name = "txtDFDeg";
+            txtDFDeg.Size = new Size(158, 23);
+            txtDFDeg.TabIndex = 13;
+            // 
+            // lblDFDeg
+            // 
+            lblDFDeg.AutoSize = true;
+            lblDFDeg.Location = new Point(18, 143);
+            lblDFDeg.Name = "lblDFDeg";
+            lblDFDeg.Size = new Size(106, 15);
+            lblDFDeg.TabIndex = 14;
+            lblDFDeg.Text = "Direction (Degree):";
+            // 
+            // txtDFDistance
+            // 
+            txtDFDistance.Location = new Point(130, 109);
+            txtDFDistance.Name = "txtDFDistance";
+            txtDFDistance.Size = new Size(158, 23);
+            txtDFDistance.TabIndex = 12;
+            // 
+            // lblDFDistance
+            // 
+            lblDFDistance.AutoSize = true;
+            lblDFDistance.Location = new Point(10, 112);
+            lblDFDistance.Name = "lblDFDistance";
+            lblDFDistance.Size = new Size(114, 15);
+            lblDFDistance.TabIndex = 13;
+            lblDFDistance.Text = "Distance From (km):";
+            // 
+            // txtDFX
+            // 
+            txtDFX.Location = new Point(130, 22);
+            txtDFX.Name = "txtDFX";
+            txtDFX.Size = new Size(158, 23);
+            txtDFX.TabIndex = 1;
+            // 
+            // lblDFX
+            // 
+            lblDFX.AutoSize = true;
+            lblDFX.Location = new Point(107, 25);
+            lblDFX.Name = "lblDFX";
+            lblDFX.Size = new Size(17, 15);
+            lblDFX.TabIndex = 0;
+            lblDFX.Text = "X:";
+            // 
+            // lblDFZ
+            // 
+            lblDFZ.AutoSize = true;
+            lblDFZ.Location = new Point(107, 83);
+            lblDFZ.Name = "lblDFZ";
+            lblDFZ.Size = new Size(17, 15);
+            lblDFZ.TabIndex = 4;
+            lblDFZ.Text = "Z:";
+            // 
+            // lblDFY
+            // 
+            lblDFY.AutoSize = true;
+            lblDFY.Location = new Point(107, 54);
+            lblDFY.Name = "lblDFY";
+            lblDFY.Size = new Size(17, 15);
+            lblDFY.TabIndex = 2;
+            lblDFY.Text = "Y:";
+            // 
+            // txtDFZ
+            // 
+            txtDFZ.Location = new Point(130, 80);
+            txtDFZ.Name = "txtDFZ";
+            txtDFZ.Size = new Size(158, 23);
+            txtDFZ.TabIndex = 5;
+            // 
+            // txtDFY
+            // 
+            txtDFY.Location = new Point(130, 51);
+            txtDFY.Name = "txtDFY";
+            txtDFY.Size = new Size(158, 23);
+            txtDFY.TabIndex = 3;
+            // 
             // CalculatorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -582,17 +729,21 @@
             tabConverter.ResumeLayout(false);
             grpConvertDMSInputs.ResumeLayout(false);
             grpConvertDMSInputs.PerformLayout();
+            tabDistance.ResumeLayout(false);
+            tabDistance.PerformLayout();
+            grpDFInputs.ResumeLayout(false);
+            grpDFInputs.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label lblConvertXParam;
-        private TextBox txtConvertXParam;
-        private Label lblConvertYParam;
-        private TextBox txtConvertYParam;
-        private Label lblConvertZParam;
-        private TextBox txtConvertZParam;
+        private Label lblConvertX;
+        private TextBox txtConvertX;
+        private Label lblConvertY;
+        private TextBox txtConvertY;
+        private Label lblConvertZ;
+        private TextBox txtConvertZ;
         private TextBox txtAddAltitude;
         private Label lblAddAltitude;
         private Label lblConvertXOutput;
@@ -605,12 +756,12 @@
         private GroupBox grpConvertGeocentricInputs;
         private GroupBox grpConvertOutputs;
         private GroupBox grpConvertLatLngInputs;
-        private Label lblConvertLngParam;
-        private TextBox txtConvertLatParam;
-        private Label lblConvertLatParam;
-        private Label lblConvertAltParam;
-        private TextBox txtConvertLngParam;
-        private TextBox txtConvertAltParam;
+        private Label lblConvertLng;
+        private TextBox txtConvertLat;
+        private Label lblConvertLat;
+        private Label lblConvertAlt;
+        private TextBox txtConvertLng;
+        private TextBox txtConvertAlt;
         private Button btnConvertLatLng;
         private TextBox txtConvertAltOutput;
         private TextBox txtConvertLngOutput;
@@ -639,5 +790,19 @@
         private TextBox txtConvertDMSLatDirection;
         private TextBox txtConvertDMSLngDirection;
         private Button btnConvertDMS;
+        private TabPage tabDistance;
+        private GroupBox grpDFInputs;
+        private TextBox txtDFX;
+        private Label lblDFX;
+        private Label lblDFZ;
+        private Label lblDFY;
+        private TextBox txtDFZ;
+        private TextBox txtDFY;
+        private Label lblDFDistance;
+        private TextBox txtDFDistance;
+        private Label lblDFDeg;
+        private TextBox txtDFDeg;
+        private Button btnDFCalculate;
+        private TextBox txtDFResult;
     }
 }
