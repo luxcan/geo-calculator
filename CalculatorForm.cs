@@ -1,4 +1,7 @@
 using GeoCalculator.Codes.Model;
+using GeographicLib;
+using Microsoft.VisualBasic.Logging;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GeoCalculator {
     public partial class CalculatorForm : Form {
@@ -73,7 +76,7 @@ namespace GeoCalculator {
             _ = double.TryParse(txtDFX.Text, out double x);
             _ = double.TryParse(txtDFY.Text, out double y);
             _ = double.TryParse(txtDFZ.Text, out double z);
-            _ = int.TryParse(txtDFDistance.Text, out int distance);
+            _ = double.TryParse(txtDFDistance.Text, out double distance);
             var baseCoordinates = new Coordinates();
             baseCoordinates.SetGeocentric(x, y, z);
 
@@ -96,30 +99,17 @@ namespace GeoCalculator {
             }
         }
 
-        private Coordinates CalculateDistanceFrom(Coordinates baseCoordinates, int degree, int distance) {
-            var baseLat = baseCoordinates.Latitude;
-            double earthRadiusKm = 6371.0;
-
-            // Convert angle to radians
-            double angleRadians = degree * Math.PI / 180.0;
-
-            // Calculate the new latitude
-            double newLat = Math.Asin(Math.Sin(baseLat * Math.PI / 180.0) * Math.Cos(distance / earthRadiusKm) + Math.Cos(baseLat * Math.PI / 180.0) * Math.Sin(distance / earthRadiusKm) * Math.Cos(angleRadians));
-
-            // Calculate the new longitude
-            double newLng = baseLat * Math.PI / 180.0 + Math.Atan2(Math.Sin(angleRadians) * Math.Sin(distance / earthRadiusKm) * Math.Cos(baseLat * Math.PI / 180.0), Math.Cos(distance / earthRadiusKm) - Math.Sin(baseLat * Math.PI / 180.0) * Math.Sin(newLat));
-
-            // Convert back to decimal degrees
-            newLat = newLat * 180.0 / Math.PI;
-            newLng = newLng * 180.0 / Math.PI;
+        private Coordinates CalculateDistanceFrom(Coordinates baseCoordinates, int degree, double distanceInKM) {
+            var geod = Geodesic.WGS84;
+            geod.Direct(baseCoordinates.Latitude, baseCoordinates.Longitude, degree, distanceInKM * 1000, out double newLat, out double newLon);
 
             var coordinates = new Coordinates();
-            coordinates.SetGeodetic(newLat, newLng, baseCoordinates.Altitude);
+            coordinates.SetGeodetic(newLat, newLon, baseCoordinates.Altitude);
             return coordinates;
         }
 
         private double Round(double value) {
-            return Math.Round(value, 6);
+            return Math.Round(value, 4);
         }
     }
 }
