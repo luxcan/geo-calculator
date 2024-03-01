@@ -3,7 +3,7 @@ using GeographicLib;
 
 namespace GeoCalculator.Codes.Util {
     public static class ConverterUtil {
-        static Geocentric earth = new Geocentric(Constants.WGS84_a, Constants.WGS84_f);
+        static readonly Geocentric earth = new Geocentric(Constants.WGS84_a, Constants.WGS84_f);
 
         public static void GeocentricToGeodetic(Coordinates coordinates) {
             (coordinates.Latitude, coordinates.Longitude, coordinates.Altitude) = earth.Reverse(coordinates.X, coordinates.Y, coordinates.Z);

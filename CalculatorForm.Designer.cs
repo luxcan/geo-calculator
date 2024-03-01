@@ -41,6 +41,7 @@
             btnConvertGeocentric = new Button();
             grpConvertGeocentricInputs = new GroupBox();
             grpConvertOutputs = new GroupBox();
+            btnClipboardCopy = new Button();
             txtConvertDMSLngOutput = new TextBox();
             txtConvertDMSLatOutput = new TextBox();
             lblConvertAltOutput = new Label();
@@ -84,12 +85,16 @@
             lblDFDeg = new Label();
             txtDFDistance = new TextBox();
             lblDFDistance = new Label();
-            txtDFX = new TextBox();
-            lblDFX = new Label();
-            lblDFZ = new Label();
-            lblDFY = new Label();
-            txtDFZ = new TextBox();
-            txtDFY = new TextBox();
+            txtDFLat = new TextBox();
+            lblDFLat = new Label();
+            lblDFAltitude = new Label();
+            lblDFLng = new Label();
+            txtDFAltitude = new TextBox();
+            txtDFLng = new TextBox();
+            txtClipboard = new TextBox();
+            lblClipboard = new Label();
+            lblGithub = new Label();
+            btnPasteFromClipboard = new Button();
             grpConvertGeocentricInputs.SuspendLayout();
             grpConvertOutputs.SuspendLayout();
             grpConvertLatLngInputs.SuspendLayout();
@@ -104,120 +109,138 @@
             // lblConvertX
             // 
             lblConvertX.AutoSize = true;
-            lblConvertX.Location = new Point(10, 25);
+            lblConvertX.Location = new Point(14, 42);
+            lblConvertX.Margin = new Padding(4, 0, 4, 0);
             lblConvertX.Name = "lblConvertX";
-            lblConvertX.Size = new Size(17, 15);
+            lblConvertX.Size = new Size(27, 25);
             lblConvertX.TabIndex = 0;
             lblConvertX.Text = "X:";
             // 
             // txtConvertX
             // 
-            txtConvertX.Location = new Point(33, 22);
+            txtConvertX.Location = new Point(47, 37);
+            txtConvertX.Margin = new Padding(4, 5, 4, 5);
             txtConvertX.Name = "txtConvertX";
-            txtConvertX.Size = new Size(100, 23);
+            txtConvertX.Size = new Size(141, 31);
             txtConvertX.TabIndex = 1;
             // 
             // lblConvertY
             // 
             lblConvertY.AutoSize = true;
-            lblConvertY.Location = new Point(10, 54);
+            lblConvertY.Location = new Point(14, 90);
+            lblConvertY.Margin = new Padding(4, 0, 4, 0);
             lblConvertY.Name = "lblConvertY";
-            lblConvertY.Size = new Size(17, 15);
+            lblConvertY.Size = new Size(26, 25);
             lblConvertY.TabIndex = 2;
             lblConvertY.Text = "Y:";
             // 
             // txtConvertY
             // 
-            txtConvertY.Location = new Point(33, 51);
+            txtConvertY.Location = new Point(47, 85);
+            txtConvertY.Margin = new Padding(4, 5, 4, 5);
             txtConvertY.Name = "txtConvertY";
-            txtConvertY.Size = new Size(100, 23);
+            txtConvertY.Size = new Size(141, 31);
             txtConvertY.TabIndex = 3;
             // 
             // lblConvertZ
             // 
             lblConvertZ.AutoSize = true;
-            lblConvertZ.Location = new Point(10, 83);
+            lblConvertZ.Location = new Point(14, 138);
+            lblConvertZ.Margin = new Padding(4, 0, 4, 0);
             lblConvertZ.Name = "lblConvertZ";
-            lblConvertZ.Size = new Size(17, 15);
+            lblConvertZ.Size = new Size(26, 25);
             lblConvertZ.TabIndex = 4;
             lblConvertZ.Text = "Z:";
             // 
             // txtConvertZ
             // 
-            txtConvertZ.Location = new Point(32, 80);
+            txtConvertZ.Location = new Point(46, 133);
+            txtConvertZ.Margin = new Padding(4, 5, 4, 5);
             txtConvertZ.Name = "txtConvertZ";
-            txtConvertZ.Size = new Size(100, 23);
+            txtConvertZ.Size = new Size(141, 31);
             txtConvertZ.TabIndex = 5;
             // 
             // lblAddAltitude
             // 
             lblAddAltitude.AutoSize = true;
-            lblAddAltitude.Location = new Point(14, 22);
+            lblAddAltitude.Location = new Point(20, 37);
+            lblAddAltitude.Margin = new Padding(4, 0, 4, 0);
             lblAddAltitude.Name = "lblAddAltitude";
-            lblAddAltitude.Size = new Size(77, 15);
+            lblAddAltitude.Size = new Size(117, 25);
             lblAddAltitude.TabIndex = 9;
             lblAddAltitude.Text = "Add Altitude:";
             // 
             // txtAddAltitude
             // 
-            txtAddAltitude.Location = new Point(97, 19);
+            txtAddAltitude.Location = new Point(139, 32);
+            txtAddAltitude.Margin = new Padding(4, 5, 4, 5);
             txtAddAltitude.Name = "txtAddAltitude";
-            txtAddAltitude.Size = new Size(100, 23);
+            txtAddAltitude.Size = new Size(141, 31);
             txtAddAltitude.TabIndex = 8;
             // 
             // lblConvertXOutput
             // 
             lblConvertXOutput.AutoSize = true;
-            lblConvertXOutput.Location = new Point(10, 22);
+            lblConvertXOutput.Location = new Point(14, 37);
+            lblConvertXOutput.Margin = new Padding(4, 0, 4, 0);
             lblConvertXOutput.Name = "lblConvertXOutput";
-            lblConvertXOutput.Size = new Size(17, 15);
+            lblConvertXOutput.Size = new Size(27, 25);
             lblConvertXOutput.TabIndex = 0;
             lblConvertXOutput.Text = "X:";
             // 
             // lblConvertZOutput
             // 
             lblConvertZOutput.AutoSize = true;
-            lblConvertZOutput.Location = new Point(10, 80);
+            lblConvertZOutput.Location = new Point(14, 133);
+            lblConvertZOutput.Margin = new Padding(4, 0, 4, 0);
             lblConvertZOutput.Name = "lblConvertZOutput";
-            lblConvertZOutput.Size = new Size(17, 15);
+            lblConvertZOutput.Size = new Size(26, 25);
             lblConvertZOutput.TabIndex = 4;
             lblConvertZOutput.Text = "Z:";
             // 
             // txtConvertZOutput
             // 
-            txtConvertZOutput.Location = new Point(32, 77);
+            txtConvertZOutput.Location = new Point(46, 128);
+            txtConvertZOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertZOutput.Name = "txtConvertZOutput";
-            txtConvertZOutput.Size = new Size(100, 23);
+            txtConvertZOutput.ReadOnly = true;
+            txtConvertZOutput.Size = new Size(141, 31);
             txtConvertZOutput.TabIndex = 5;
             // 
             // txtConvertXOutput
             // 
-            txtConvertXOutput.Location = new Point(33, 19);
+            txtConvertXOutput.Location = new Point(47, 32);
+            txtConvertXOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertXOutput.Name = "txtConvertXOutput";
-            txtConvertXOutput.Size = new Size(100, 23);
+            txtConvertXOutput.ReadOnly = true;
+            txtConvertXOutput.Size = new Size(141, 31);
             txtConvertXOutput.TabIndex = 1;
             // 
             // txtConvertYOutput
             // 
-            txtConvertYOutput.Location = new Point(32, 48);
+            txtConvertYOutput.Location = new Point(46, 80);
+            txtConvertYOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertYOutput.Name = "txtConvertYOutput";
-            txtConvertYOutput.Size = new Size(100, 23);
+            txtConvertYOutput.ReadOnly = true;
+            txtConvertYOutput.Size = new Size(141, 31);
             txtConvertYOutput.TabIndex = 3;
             // 
             // lblConvertYOutput
             // 
             lblConvertYOutput.AutoSize = true;
-            lblConvertYOutput.Location = new Point(10, 51);
+            lblConvertYOutput.Location = new Point(14, 85);
+            lblConvertYOutput.Margin = new Padding(4, 0, 4, 0);
             lblConvertYOutput.Name = "lblConvertYOutput";
-            lblConvertYOutput.Size = new Size(17, 15);
+            lblConvertYOutput.Size = new Size(26, 25);
             lblConvertYOutput.TabIndex = 2;
             lblConvertYOutput.Text = "Y:";
             // 
             // btnConvertGeocentric
             // 
-            btnConvertGeocentric.Location = new Point(59, 145);
+            btnConvertGeocentric.Location = new Point(84, 242);
+            btnConvertGeocentric.Margin = new Padding(4, 5, 4, 5);
             btnConvertGeocentric.Name = "btnConvertGeocentric";
-            btnConvertGeocentric.Size = new Size(64, 25);
+            btnConvertGeocentric.Size = new Size(91, 42);
             btnConvertGeocentric.TabIndex = 9;
             btnConvertGeocentric.Text = "Convert";
             btnConvertGeocentric.UseVisualStyleBackColor = true;
@@ -231,15 +254,18 @@
             grpConvertGeocentricInputs.Controls.Add(lblConvertY);
             grpConvertGeocentricInputs.Controls.Add(txtConvertZ);
             grpConvertGeocentricInputs.Controls.Add(txtConvertY);
-            grpConvertGeocentricInputs.Location = new Point(17, 12);
+            grpConvertGeocentricInputs.Location = new Point(24, 20);
+            grpConvertGeocentricInputs.Margin = new Padding(4, 5, 4, 5);
             grpConvertGeocentricInputs.Name = "grpConvertGeocentricInputs";
-            grpConvertGeocentricInputs.Size = new Size(146, 116);
+            grpConvertGeocentricInputs.Padding = new Padding(4, 5, 4, 5);
+            grpConvertGeocentricInputs.Size = new Size(209, 193);
             grpConvertGeocentricInputs.TabIndex = 10;
             grpConvertGeocentricInputs.TabStop = false;
             grpConvertGeocentricInputs.Text = "Geocentric";
             // 
             // grpConvertOutputs
             // 
+            grpConvertOutputs.Controls.Add(btnClipboardCopy);
             grpConvertOutputs.Controls.Add(txtConvertDMSLngOutput);
             grpConvertOutputs.Controls.Add(txtConvertDMSLatOutput);
             grpConvertOutputs.Controls.Add(lblConvertAltOutput);
@@ -254,73 +280,99 @@
             grpConvertOutputs.Controls.Add(txtConvertXOutput);
             grpConvertOutputs.Controls.Add(txtConvertYOutput);
             grpConvertOutputs.Controls.Add(lblConvertYOutput);
-            grpConvertOutputs.Location = new Point(17, 186);
+            grpConvertOutputs.Location = new Point(24, 310);
+            grpConvertOutputs.Margin = new Padding(4, 5, 4, 5);
             grpConvertOutputs.Name = "grpConvertOutputs";
-            grpConvertOutputs.Size = new Size(619, 118);
+            grpConvertOutputs.Padding = new Padding(4, 5, 4, 5);
+            grpConvertOutputs.Size = new Size(884, 197);
             grpConvertOutputs.TabIndex = 11;
             grpConvertOutputs.TabStop = false;
             grpConvertOutputs.Text = "Outputs";
             // 
+            // btnClipboardCopy
+            // 
+            btnClipboardCopy.Location = new Point(777, 145);
+            btnClipboardCopy.Margin = new Padding(4, 5, 4, 5);
+            btnClipboardCopy.Name = "btnClipboardCopy";
+            btnClipboardCopy.Size = new Size(91, 42);
+            btnClipboardCopy.TabIndex = 19;
+            btnClipboardCopy.Text = "Copy";
+            btnClipboardCopy.UseVisualStyleBackColor = true;
+            btnClipboardCopy.Click += btnClipboardCopy_Click;
+            // 
             // txtConvertDMSLngOutput
             // 
-            txtConvertDMSLngOutput.Location = new Point(393, 48);
+            txtConvertDMSLngOutput.Location = new Point(561, 80);
+            txtConvertDMSLngOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLngOutput.Name = "txtConvertDMSLngOutput";
-            txtConvertDMSLngOutput.Size = new Size(220, 23);
+            txtConvertDMSLngOutput.ReadOnly = true;
+            txtConvertDMSLngOutput.Size = new Size(313, 31);
             txtConvertDMSLngOutput.TabIndex = 27;
             // 
             // txtConvertDMSLatOutput
             // 
-            txtConvertDMSLatOutput.Location = new Point(393, 19);
+            txtConvertDMSLatOutput.Location = new Point(561, 32);
+            txtConvertDMSLatOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLatOutput.Name = "txtConvertDMSLatOutput";
-            txtConvertDMSLatOutput.Size = new Size(220, 23);
+            txtConvertDMSLatOutput.ReadOnly = true;
+            txtConvertDMSLatOutput.Size = new Size(313, 31);
             txtConvertDMSLatOutput.TabIndex = 23;
             // 
             // lblConvertAltOutput
             // 
             lblConvertAltOutput.AutoSize = true;
-            lblConvertAltOutput.Location = new Point(183, 80);
+            lblConvertAltOutput.Location = new Point(261, 133);
+            lblConvertAltOutput.Margin = new Padding(4, 0, 4, 0);
             lblConvertAltOutput.Name = "lblConvertAltOutput";
-            lblConvertAltOutput.Size = new Size(52, 15);
+            lblConvertAltOutput.Size = new Size(78, 25);
             lblConvertAltOutput.TabIndex = 22;
             lblConvertAltOutput.Text = "Altitude:";
             // 
             // lblConvertLngOutput
             // 
             lblConvertLngOutput.AutoSize = true;
-            lblConvertLngOutput.Location = new Point(205, 51);
+            lblConvertLngOutput.Location = new Point(293, 85);
+            lblConvertLngOutput.Margin = new Padding(4, 0, 4, 0);
             lblConvertLngOutput.Name = "lblConvertLngOutput";
-            lblConvertLngOutput.Size = new Size(30, 15);
+            lblConvertLngOutput.Size = new Size(45, 25);
             lblConvertLngOutput.TabIndex = 21;
             lblConvertLngOutput.Text = "Lng:";
             // 
             // lblConvertLatOutput
             // 
             lblConvertLatOutput.AutoSize = true;
-            lblConvertLatOutput.Location = new Point(209, 22);
+            lblConvertLatOutput.Location = new Point(299, 37);
+            lblConvertLatOutput.Margin = new Padding(4, 0, 4, 0);
             lblConvertLatOutput.Name = "lblConvertLatOutput";
-            lblConvertLatOutput.Size = new Size(26, 15);
+            lblConvertLatOutput.Size = new Size(39, 25);
             lblConvertLatOutput.TabIndex = 20;
             lblConvertLatOutput.Text = "Lat:";
             // 
             // txtConvertAltOutput
             // 
-            txtConvertAltOutput.Location = new Point(241, 77);
+            txtConvertAltOutput.Location = new Point(344, 128);
+            txtConvertAltOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertAltOutput.Name = "txtConvertAltOutput";
-            txtConvertAltOutput.Size = new Size(100, 23);
+            txtConvertAltOutput.ReadOnly = true;
+            txtConvertAltOutput.Size = new Size(141, 31);
             txtConvertAltOutput.TabIndex = 19;
             // 
             // txtConvertLngOutput
             // 
-            txtConvertLngOutput.Location = new Point(241, 48);
+            txtConvertLngOutput.Location = new Point(344, 80);
+            txtConvertLngOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertLngOutput.Name = "txtConvertLngOutput";
-            txtConvertLngOutput.Size = new Size(100, 23);
+            txtConvertLngOutput.ReadOnly = true;
+            txtConvertLngOutput.Size = new Size(141, 31);
             txtConvertLngOutput.TabIndex = 17;
             // 
             // txtConvertLatOutput
             // 
-            txtConvertLatOutput.Location = new Point(241, 19);
+            txtConvertLatOutput.Location = new Point(344, 32);
+            txtConvertLatOutput.Margin = new Padding(4, 5, 4, 5);
             txtConvertLatOutput.Name = "txtConvertLatOutput";
-            txtConvertLatOutput.Size = new Size(100, 23);
+            txtConvertLatOutput.ReadOnly = true;
+            txtConvertLatOutput.Size = new Size(141, 31);
             txtConvertLatOutput.TabIndex = 16;
             // 
             // grpConvertLatLngInputs
@@ -331,66 +383,75 @@
             grpConvertLatLngInputs.Controls.Add(lblConvertLng);
             grpConvertLatLngInputs.Controls.Add(txtConvertLat);
             grpConvertLatLngInputs.Controls.Add(lblConvertLat);
-            grpConvertLatLngInputs.Location = new Point(186, 12);
+            grpConvertLatLngInputs.Location = new Point(266, 20);
+            grpConvertLatLngInputs.Margin = new Padding(4, 5, 4, 5);
             grpConvertLatLngInputs.Name = "grpConvertLatLngInputs";
-            grpConvertLatLngInputs.Size = new Size(185, 116);
+            grpConvertLatLngInputs.Padding = new Padding(4, 5, 4, 5);
+            grpConvertLatLngInputs.Size = new Size(264, 193);
             grpConvertLatLngInputs.TabIndex = 14;
             grpConvertLatLngInputs.TabStop = false;
             grpConvertLatLngInputs.Text = "Lat/Lng";
             // 
             // txtConvertAlt
             // 
-            txtConvertAlt.Location = new Point(72, 80);
+            txtConvertAlt.Location = new Point(103, 133);
+            txtConvertAlt.Margin = new Padding(4, 5, 4, 5);
             txtConvertAlt.Name = "txtConvertAlt";
-            txtConvertAlt.Size = new Size(100, 23);
+            txtConvertAlt.Size = new Size(141, 31);
             txtConvertAlt.TabIndex = 18;
             // 
             // lblConvertAlt
             // 
             lblConvertAlt.AutoSize = true;
-            lblConvertAlt.Location = new Point(14, 83);
+            lblConvertAlt.Location = new Point(20, 138);
+            lblConvertAlt.Margin = new Padding(4, 0, 4, 0);
             lblConvertAlt.Name = "lblConvertAlt";
-            lblConvertAlt.Size = new Size(52, 15);
+            lblConvertAlt.Size = new Size(78, 25);
             lblConvertAlt.TabIndex = 17;
             lblConvertAlt.Text = "Altitude:";
             // 
             // txtConvertLng
             // 
-            txtConvertLng.Location = new Point(72, 51);
+            txtConvertLng.Location = new Point(103, 85);
+            txtConvertLng.Margin = new Padding(4, 5, 4, 5);
             txtConvertLng.Name = "txtConvertLng";
-            txtConvertLng.Size = new Size(100, 23);
+            txtConvertLng.Size = new Size(141, 31);
             txtConvertLng.TabIndex = 16;
             // 
             // lblConvertLng
             // 
             lblConvertLng.AutoSize = true;
-            lblConvertLng.Location = new Point(36, 54);
+            lblConvertLng.Location = new Point(51, 90);
+            lblConvertLng.Margin = new Padding(4, 0, 4, 0);
             lblConvertLng.Name = "lblConvertLng";
-            lblConvertLng.Size = new Size(30, 15);
+            lblConvertLng.Size = new Size(45, 25);
             lblConvertLng.TabIndex = 6;
             lblConvertLng.Text = "Lng:";
             // 
             // txtConvertLat
             // 
-            txtConvertLat.Location = new Point(72, 22);
+            txtConvertLat.Location = new Point(103, 37);
+            txtConvertLat.Margin = new Padding(4, 5, 4, 5);
             txtConvertLat.Name = "txtConvertLat";
-            txtConvertLat.Size = new Size(100, 23);
+            txtConvertLat.Size = new Size(141, 31);
             txtConvertLat.TabIndex = 15;
             // 
             // lblConvertLat
             // 
             lblConvertLat.AutoSize = true;
-            lblConvertLat.Location = new Point(40, 25);
+            lblConvertLat.Location = new Point(57, 42);
+            lblConvertLat.Margin = new Padding(4, 0, 4, 0);
             lblConvertLat.Name = "lblConvertLat";
-            lblConvertLat.Size = new Size(26, 15);
+            lblConvertLat.Size = new Size(39, 25);
             lblConvertLat.TabIndex = 15;
             lblConvertLat.Text = "Lat:";
             // 
             // btnConvertLatLng
             // 
-            btnConvertLatLng.Location = new Point(247, 145);
+            btnConvertLatLng.Location = new Point(353, 242);
+            btnConvertLatLng.Margin = new Padding(4, 5, 4, 5);
             btnConvertLatLng.Name = "btnConvertLatLng";
-            btnConvertLatLng.Size = new Size(64, 25);
+            btnConvertLatLng.Size = new Size(91, 42);
             btnConvertLatLng.TabIndex = 15;
             btnConvertLatLng.Text = "Convert";
             btnConvertLatLng.UseVisualStyleBackColor = true;
@@ -400,9 +461,11 @@
             // 
             grpAddConditions.Controls.Add(lblAddAltitude);
             grpAddConditions.Controls.Add(txtAddAltitude);
-            grpAddConditions.Location = new Point(651, 12);
+            grpAddConditions.Location = new Point(930, 20);
+            grpAddConditions.Margin = new Padding(4, 5, 4, 5);
             grpAddConditions.Name = "grpAddConditions";
-            grpAddConditions.Size = new Size(211, 292);
+            grpAddConditions.Padding = new Padding(4, 5, 4, 5);
+            grpAddConditions.Size = new Size(301, 487);
             grpAddConditions.TabIndex = 16;
             grpAddConditions.TabStop = false;
             grpAddConditions.Text = "Additional Conditions";
@@ -411,10 +474,11 @@
             // 
             mainTab.Controls.Add(tabConverter);
             mainTab.Controls.Add(tabDistance);
-            mainTab.Location = new Point(12, 12);
+            mainTab.Location = new Point(17, 20);
+            mainTab.Margin = new Padding(4, 5, 4, 5);
             mainTab.Name = "mainTab";
             mainTab.SelectedIndex = 0;
-            mainTab.Size = new Size(884, 342);
+            mainTab.Size = new Size(1263, 570);
             mainTab.TabIndex = 17;
             // 
             // tabConverter
@@ -427,19 +491,21 @@
             tabConverter.Controls.Add(grpConvertOutputs);
             tabConverter.Controls.Add(btnConvertLatLng);
             tabConverter.Controls.Add(btnConvertGeocentric);
-            tabConverter.Location = new Point(4, 24);
+            tabConverter.Location = new Point(4, 34);
+            tabConverter.Margin = new Padding(4, 5, 4, 5);
             tabConverter.Name = "tabConverter";
-            tabConverter.Padding = new Padding(3);
-            tabConverter.Size = new Size(876, 314);
+            tabConverter.Padding = new Padding(4, 5, 4, 5);
+            tabConverter.Size = new Size(1255, 532);
             tabConverter.TabIndex = 0;
             tabConverter.Text = "Converter";
             tabConverter.UseVisualStyleBackColor = true;
             // 
             // btnConvertDMS
             // 
-            btnConvertDMS.Location = new Point(463, 145);
+            btnConvertDMS.Location = new Point(661, 242);
+            btnConvertDMS.Margin = new Padding(4, 5, 4, 5);
             btnConvertDMS.Name = "btnConvertDMS";
-            btnConvertDMS.Size = new Size(64, 25);
+            btnConvertDMS.Size = new Size(91, 42);
             btnConvertDMS.TabIndex = 18;
             btnConvertDMS.Text = "Convert";
             btnConvertDMS.UseVisualStyleBackColor = true;
@@ -461,168 +527,190 @@
             grpConvertDMSInputs.Controls.Add(txtConvertDMSLatMin);
             grpConvertDMSInputs.Controls.Add(lblConvertDMSLatDeg);
             grpConvertDMSInputs.Controls.Add(txtConvertDMSLatDeg);
-            grpConvertDMSInputs.Location = new Point(392, 12);
+            grpConvertDMSInputs.Location = new Point(560, 20);
+            grpConvertDMSInputs.Margin = new Padding(4, 5, 4, 5);
             grpConvertDMSInputs.Name = "grpConvertDMSInputs";
-            grpConvertDMSInputs.Size = new Size(244, 116);
+            grpConvertDMSInputs.Padding = new Padding(4, 5, 4, 5);
+            grpConvertDMSInputs.Size = new Size(349, 193);
             grpConvertDMSInputs.TabIndex = 17;
             grpConvertDMSInputs.TabStop = false;
             grpConvertDMSInputs.Text = "DMS";
             // 
             // txtConvertDMSLngDirection
             // 
-            txtConvertDMSLngDirection.Location = new Point(180, 51);
+            txtConvertDMSLngDirection.Location = new Point(257, 85);
+            txtConvertDMSLngDirection.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLngDirection.Name = "txtConvertDMSLngDirection";
-            txtConvertDMSLngDirection.Size = new Size(30, 23);
+            txtConvertDMSLngDirection.Size = new Size(41, 31);
             txtConvertDMSLngDirection.TabIndex = 27;
             // 
             // txtConvertDMSLatDirection
             // 
-            txtConvertDMSLatDirection.Location = new Point(180, 22);
+            txtConvertDMSLatDirection.Location = new Point(257, 37);
+            txtConvertDMSLatDirection.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLatDirection.Name = "txtConvertDMSLatDirection";
-            txtConvertDMSLatDirection.Size = new Size(30, 23);
+            txtConvertDMSLatDirection.Size = new Size(41, 31);
             txtConvertDMSLatDirection.TabIndex = 26;
             // 
             // lblCovertDMSLngSec
             // 
             lblCovertDMSLngSec.AutoSize = true;
-            lblCovertDMSLngSec.Location = new Point(169, 54);
+            lblCovertDMSLngSec.Location = new Point(241, 90);
+            lblCovertDMSLngSec.Margin = new Padding(4, 0, 4, 0);
             lblCovertDMSLngSec.Name = "lblCovertDMSLngSec";
-            lblCovertDMSLngSec.Size = new Size(12, 15);
+            lblCovertDMSLngSec.Size = new Size(19, 25);
             lblCovertDMSLngSec.TabIndex = 21;
             lblCovertDMSLngSec.Text = "\"";
             // 
             // txtConvertDMSLngSec
             // 
-            txtConvertDMSLngSec.Location = new Point(118, 51);
+            txtConvertDMSLngSec.Location = new Point(169, 85);
+            txtConvertDMSLngSec.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLngSec.Name = "txtConvertDMSLngSec";
-            txtConvertDMSLngSec.Size = new Size(53, 23);
+            txtConvertDMSLngSec.Size = new Size(74, 31);
             txtConvertDMSLngSec.TabIndex = 25;
             // 
             // lblConvertDMSLngMin
             // 
             lblConvertDMSLngMin.AutoSize = true;
-            lblConvertDMSLngMin.Location = new Point(102, 54);
+            lblConvertDMSLngMin.Location = new Point(146, 90);
+            lblConvertDMSLngMin.Margin = new Padding(4, 0, 4, 0);
             lblConvertDMSLngMin.Name = "lblConvertDMSLngMin";
-            lblConvertDMSLngMin.Size = new Size(10, 15);
+            lblConvertDMSLngMin.Size = new Size(16, 25);
             lblConvertDMSLngMin.TabIndex = 24;
             lblConvertDMSLngMin.Text = "'";
             // 
             // txtConvertDMSLngMin
             // 
-            txtConvertDMSLngMin.Location = new Point(69, 51);
+            txtConvertDMSLngMin.Location = new Point(99, 85);
+            txtConvertDMSLngMin.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLngMin.Name = "txtConvertDMSLngMin";
-            txtConvertDMSLngMin.Size = new Size(30, 23);
+            txtConvertDMSLngMin.Size = new Size(41, 31);
             txtConvertDMSLngMin.TabIndex = 23;
             // 
             // lblConvertDMSLngDeg
             // 
             lblConvertDMSLngDeg.AutoSize = true;
-            lblConvertDMSLngDeg.Location = new Point(51, 54);
+            lblConvertDMSLngDeg.Location = new Point(73, 90);
+            lblConvertDMSLngDeg.Margin = new Padding(4, 0, 4, 0);
             lblConvertDMSLngDeg.Name = "lblConvertDMSLngDeg";
-            lblConvertDMSLngDeg.Size = new Size(12, 15);
+            lblConvertDMSLngDeg.Size = new Size(19, 25);
             lblConvertDMSLngDeg.TabIndex = 22;
             lblConvertDMSLngDeg.Text = "°";
             // 
             // txtConvertDMSLngDeg
             // 
-            txtConvertDMSLngDeg.Location = new Point(18, 51);
+            txtConvertDMSLngDeg.Location = new Point(26, 85);
+            txtConvertDMSLngDeg.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLngDeg.Name = "txtConvertDMSLngDeg";
-            txtConvertDMSLngDeg.Size = new Size(30, 23);
+            txtConvertDMSLngDeg.Size = new Size(41, 31);
             txtConvertDMSLngDeg.TabIndex = 21;
             // 
             // lblConvertDMSLatSec
             // 
             lblConvertDMSLatSec.AutoSize = true;
-            lblConvertDMSLatSec.Location = new Point(169, 25);
+            lblConvertDMSLatSec.Location = new Point(241, 42);
+            lblConvertDMSLatSec.Margin = new Padding(4, 0, 4, 0);
             lblConvertDMSLatSec.Name = "lblConvertDMSLatSec";
-            lblConvertDMSLatSec.Size = new Size(12, 15);
+            lblConvertDMSLatSec.Size = new Size(19, 25);
             lblConvertDMSLatSec.TabIndex = 20;
             lblConvertDMSLatSec.Text = "\"";
             // 
             // txtConvertDMSLatSec
             // 
-            txtConvertDMSLatSec.Location = new Point(118, 22);
+            txtConvertDMSLatSec.Location = new Point(169, 37);
+            txtConvertDMSLatSec.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLatSec.Name = "txtConvertDMSLatSec";
-            txtConvertDMSLatSec.Size = new Size(53, 23);
+            txtConvertDMSLatSec.Size = new Size(74, 31);
             txtConvertDMSLatSec.TabIndex = 19;
             // 
             // lblConvertDMSLatMin
             // 
             lblConvertDMSLatMin.AutoSize = true;
-            lblConvertDMSLatMin.Location = new Point(102, 25);
+            lblConvertDMSLatMin.Location = new Point(146, 42);
+            lblConvertDMSLatMin.Margin = new Padding(4, 0, 4, 0);
             lblConvertDMSLatMin.Name = "lblConvertDMSLatMin";
-            lblConvertDMSLatMin.Size = new Size(10, 15);
+            lblConvertDMSLatMin.Size = new Size(16, 25);
             lblConvertDMSLatMin.TabIndex = 18;
             lblConvertDMSLatMin.Text = "'";
             // 
             // txtConvertDMSLatMin
             // 
-            txtConvertDMSLatMin.Location = new Point(69, 22);
+            txtConvertDMSLatMin.Location = new Point(99, 37);
+            txtConvertDMSLatMin.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLatMin.Name = "txtConvertDMSLatMin";
-            txtConvertDMSLatMin.Size = new Size(30, 23);
+            txtConvertDMSLatMin.Size = new Size(41, 31);
             txtConvertDMSLatMin.TabIndex = 17;
             // 
             // lblConvertDMSLatDeg
             // 
             lblConvertDMSLatDeg.AutoSize = true;
-            lblConvertDMSLatDeg.Location = new Point(51, 25);
+            lblConvertDMSLatDeg.Location = new Point(73, 42);
+            lblConvertDMSLatDeg.Margin = new Padding(4, 0, 4, 0);
             lblConvertDMSLatDeg.Name = "lblConvertDMSLatDeg";
-            lblConvertDMSLatDeg.Size = new Size(12, 15);
+            lblConvertDMSLatDeg.Size = new Size(19, 25);
             lblConvertDMSLatDeg.TabIndex = 16;
             lblConvertDMSLatDeg.Text = "°";
             // 
             // txtConvertDMSLatDeg
             // 
-            txtConvertDMSLatDeg.Location = new Point(18, 22);
+            txtConvertDMSLatDeg.Location = new Point(26, 37);
+            txtConvertDMSLatDeg.Margin = new Padding(4, 5, 4, 5);
             txtConvertDMSLatDeg.Name = "txtConvertDMSLatDeg";
-            txtConvertDMSLatDeg.Size = new Size(30, 23);
+            txtConvertDMSLatDeg.Size = new Size(41, 31);
             txtConvertDMSLatDeg.TabIndex = 0;
             // 
             // tabDistance
             // 
             tabDistance.Controls.Add(txtDFResult);
             tabDistance.Controls.Add(grpDFInputs);
-            tabDistance.Location = new Point(4, 24);
+            tabDistance.Location = new Point(4, 34);
+            tabDistance.Margin = new Padding(4, 5, 4, 5);
             tabDistance.Name = "tabDistance";
-            tabDistance.Size = new Size(876, 314);
+            tabDistance.Size = new Size(1255, 532);
             tabDistance.TabIndex = 1;
             tabDistance.Text = "Distance From";
             tabDistance.UseVisualStyleBackColor = true;
             // 
             // txtDFResult
             // 
-            txtDFResult.Location = new Point(333, 14);
+            txtDFResult.Location = new Point(476, 23);
+            txtDFResult.Margin = new Padding(4, 5, 4, 5);
             txtDFResult.Multiline = true;
             txtDFResult.Name = "txtDFResult";
             txtDFResult.ScrollBars = ScrollBars.Vertical;
-            txtDFResult.Size = new Size(527, 286);
+            txtDFResult.Size = new Size(751, 474);
             txtDFResult.TabIndex = 12;
             // 
             // grpDFInputs
             // 
+            grpDFInputs.Controls.Add(btnPasteFromClipboard);
             grpDFInputs.Controls.Add(btnDFCalculate);
             grpDFInputs.Controls.Add(txtDFDeg);
             grpDFInputs.Controls.Add(lblDFDeg);
             grpDFInputs.Controls.Add(txtDFDistance);
             grpDFInputs.Controls.Add(lblDFDistance);
-            grpDFInputs.Controls.Add(txtDFX);
-            grpDFInputs.Controls.Add(lblDFX);
-            grpDFInputs.Controls.Add(lblDFZ);
-            grpDFInputs.Controls.Add(lblDFY);
-            grpDFInputs.Controls.Add(txtDFZ);
-            grpDFInputs.Controls.Add(txtDFY);
-            grpDFInputs.Location = new Point(14, 14);
+            grpDFInputs.Controls.Add(txtDFLat);
+            grpDFInputs.Controls.Add(lblDFLat);
+            grpDFInputs.Controls.Add(lblDFAltitude);
+            grpDFInputs.Controls.Add(lblDFLng);
+            grpDFInputs.Controls.Add(txtDFAltitude);
+            grpDFInputs.Controls.Add(txtDFLng);
+            grpDFInputs.Location = new Point(20, 23);
+            grpDFInputs.Margin = new Padding(4, 5, 4, 5);
             grpDFInputs.Name = "grpDFInputs";
-            grpDFInputs.Size = new Size(303, 211);
+            grpDFInputs.Padding = new Padding(4, 5, 4, 5);
+            grpDFInputs.Size = new Size(433, 352);
             grpDFInputs.TabIndex = 11;
             grpDFInputs.TabStop = false;
             grpDFInputs.Text = "Inputs";
             // 
             // btnDFCalculate
             // 
-            btnDFCalculate.Location = new Point(213, 178);
+            btnDFCalculate.Location = new Point(304, 297);
+            btnDFCalculate.Margin = new Padding(4, 5, 4, 5);
             btnDFCalculate.Name = "btnDFCalculate";
-            btnDFCalculate.Size = new Size(75, 23);
+            btnDFCalculate.Size = new Size(107, 38);
             btnDFCalculate.TabIndex = 15;
             btnDFCalculate.Text = "Calculate";
             btnDFCalculate.UseVisualStyleBackColor = true;
@@ -630,91 +718,144 @@
             // 
             // txtDFDeg
             // 
-            txtDFDeg.Location = new Point(130, 140);
+            txtDFDeg.Location = new Point(186, 233);
+            txtDFDeg.Margin = new Padding(4, 5, 4, 5);
             txtDFDeg.Name = "txtDFDeg";
-            txtDFDeg.Size = new Size(158, 23);
+            txtDFDeg.Size = new Size(224, 31);
             txtDFDeg.TabIndex = 13;
             // 
             // lblDFDeg
             // 
             lblDFDeg.AutoSize = true;
-            lblDFDeg.Location = new Point(18, 143);
+            lblDFDeg.Location = new Point(26, 238);
+            lblDFDeg.Margin = new Padding(4, 0, 4, 0);
             lblDFDeg.Name = "lblDFDeg";
-            lblDFDeg.Size = new Size(106, 15);
+            lblDFDeg.Size = new Size(159, 25);
             lblDFDeg.TabIndex = 14;
             lblDFDeg.Text = "Direction (Degree):";
             // 
             // txtDFDistance
             // 
-            txtDFDistance.Location = new Point(130, 109);
+            txtDFDistance.Location = new Point(186, 182);
+            txtDFDistance.Margin = new Padding(4, 5, 4, 5);
             txtDFDistance.Name = "txtDFDistance";
-            txtDFDistance.Size = new Size(158, 23);
+            txtDFDistance.Size = new Size(224, 31);
             txtDFDistance.TabIndex = 12;
             // 
             // lblDFDistance
             // 
             lblDFDistance.AutoSize = true;
-            lblDFDistance.Location = new Point(10, 112);
+            lblDFDistance.Location = new Point(14, 187);
+            lblDFDistance.Margin = new Padding(4, 0, 4, 0);
             lblDFDistance.Name = "lblDFDistance";
-            lblDFDistance.Size = new Size(114, 15);
+            lblDFDistance.Size = new Size(170, 25);
             lblDFDistance.TabIndex = 13;
             lblDFDistance.Text = "Distance From (km):";
             // 
-            // txtDFX
+            // txtDFLat
             // 
-            txtDFX.Location = new Point(130, 22);
-            txtDFX.Name = "txtDFX";
-            txtDFX.Size = new Size(158, 23);
-            txtDFX.TabIndex = 1;
+            txtDFLat.Location = new Point(186, 37);
+            txtDFLat.Margin = new Padding(4, 5, 4, 5);
+            txtDFLat.Name = "txtDFLat";
+            txtDFLat.Size = new Size(224, 31);
+            txtDFLat.TabIndex = 1;
             // 
-            // lblDFX
+            // lblDFLat
             // 
-            lblDFX.AutoSize = true;
-            lblDFX.Location = new Point(107, 25);
-            lblDFX.Name = "lblDFX";
-            lblDFX.Size = new Size(17, 15);
-            lblDFX.TabIndex = 0;
-            lblDFX.Text = "X:";
+            lblDFLat.AutoSize = true;
+            lblDFLat.Location = new Point(139, 40);
+            lblDFLat.Margin = new Padding(4, 0, 4, 0);
+            lblDFLat.Name = "lblDFLat";
+            lblDFLat.Size = new Size(39, 25);
+            lblDFLat.TabIndex = 0;
+            lblDFLat.Text = "Lat:";
             // 
-            // lblDFZ
+            // lblDFAltitude
             // 
-            lblDFZ.AutoSize = true;
-            lblDFZ.Location = new Point(107, 83);
-            lblDFZ.Name = "lblDFZ";
-            lblDFZ.Size = new Size(17, 15);
-            lblDFZ.TabIndex = 4;
-            lblDFZ.Text = "Z:";
+            lblDFAltitude.AutoSize = true;
+            lblDFAltitude.Location = new Point(100, 136);
+            lblDFAltitude.Margin = new Padding(4, 0, 4, 0);
+            lblDFAltitude.Name = "lblDFAltitude";
+            lblDFAltitude.Size = new Size(78, 25);
+            lblDFAltitude.TabIndex = 4;
+            lblDFAltitude.Text = "Altitude:";
             // 
-            // lblDFY
+            // lblDFLng
             // 
-            lblDFY.AutoSize = true;
-            lblDFY.Location = new Point(107, 54);
-            lblDFY.Name = "lblDFY";
-            lblDFY.Size = new Size(17, 15);
-            lblDFY.TabIndex = 2;
-            lblDFY.Text = "Y:";
+            lblDFLng.AutoSize = true;
+            lblDFLng.Location = new Point(133, 88);
+            lblDFLng.Margin = new Padding(4, 0, 4, 0);
+            lblDFLng.Name = "lblDFLng";
+            lblDFLng.Size = new Size(45, 25);
+            lblDFLng.TabIndex = 2;
+            lblDFLng.Text = "Lng:";
             // 
-            // txtDFZ
+            // txtDFAltitude
             // 
-            txtDFZ.Location = new Point(130, 80);
-            txtDFZ.Name = "txtDFZ";
-            txtDFZ.Size = new Size(158, 23);
-            txtDFZ.TabIndex = 5;
+            txtDFAltitude.Location = new Point(186, 133);
+            txtDFAltitude.Margin = new Padding(4, 5, 4, 5);
+            txtDFAltitude.Name = "txtDFAltitude";
+            txtDFAltitude.Size = new Size(224, 31);
+            txtDFAltitude.TabIndex = 5;
             // 
-            // txtDFY
+            // txtDFLng
             // 
-            txtDFY.Location = new Point(130, 51);
-            txtDFY.Name = "txtDFY";
-            txtDFY.Size = new Size(158, 23);
-            txtDFY.TabIndex = 3;
+            txtDFLng.Location = new Point(186, 85);
+            txtDFLng.Margin = new Padding(4, 5, 4, 5);
+            txtDFLng.Name = "txtDFLng";
+            txtDFLng.Size = new Size(224, 31);
+            txtDFLng.TabIndex = 3;
+            // 
+            // txtClipboard
+            // 
+            txtClipboard.BackColor = SystemColors.GradientInactiveCaption;
+            txtClipboard.Location = new Point(127, 594);
+            txtClipboard.Name = "txtClipboard";
+            txtClipboard.Size = new Size(792, 31);
+            txtClipboard.TabIndex = 18;
+            // 
+            // lblClipboard
+            // 
+            lblClipboard.AutoSize = true;
+            lblClipboard.Location = new Point(21, 597);
+            lblClipboard.Margin = new Padding(4, 0, 4, 0);
+            lblClipboard.Name = "lblClipboard";
+            lblClipboard.Size = new Size(94, 25);
+            lblClipboard.TabIndex = 22;
+            lblClipboard.Text = "Clipboard:";
+            // 
+            // lblGithub
+            // 
+            lblGithub.AutoSize = true;
+            lblGithub.Location = new Point(938, 597);
+            lblGithub.Margin = new Padding(4, 0, 4, 0);
+            lblGithub.Name = "lblGithub";
+            lblGithub.Size = new Size(338, 25);
+            lblGithub.TabIndex = 23;
+            lblGithub.Text = "https://github.com/luxcan/geo-calculator";
+            // 
+            // btnPasteFromClipboard
+            // 
+            btnPasteFromClipboard.Location = new Point(8, 297);
+            btnPasteFromClipboard.Margin = new Padding(4, 5, 4, 5);
+            btnPasteFromClipboard.Name = "btnPasteFromClipboard";
+            btnPasteFromClipboard.Size = new Size(209, 38);
+            btnPasteFromClipboard.TabIndex = 16;
+            btnPasteFromClipboard.Text = "Paste From Clipboard";
+            btnPasteFromClipboard.UseVisualStyleBackColor = true;
+            btnPasteFromClipboard.Click += btnPasteFromClipboard_Click;
             // 
             // CalculatorForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(906, 361);
+            ClientSize = new Size(1294, 637);
+            Controls.Add(lblGithub);
+            Controls.Add(lblClipboard);
+            Controls.Add(txtClipboard);
             Controls.Add(mainTab);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "CalculatorForm";
             Text = "Geo Calculator";
             grpConvertGeocentricInputs.ResumeLayout(false);
@@ -734,6 +875,7 @@
             grpDFInputs.ResumeLayout(false);
             grpDFInputs.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -792,17 +934,22 @@
         private Button btnConvertDMS;
         private TabPage tabDistance;
         private GroupBox grpDFInputs;
-        private TextBox txtDFX;
-        private Label lblDFX;
-        private Label lblDFZ;
-        private Label lblDFY;
-        private TextBox txtDFZ;
-        private TextBox txtDFY;
+        private TextBox txtDFLat;
+        private Label lblDFLat;
+        private Label lblDFAltitude;
+        private Label lblDFLng;
+        private TextBox txtDFAltitude;
+        private TextBox txtDFLng;
         private Label lblDFDistance;
         private TextBox txtDFDistance;
         private Label lblDFDeg;
         private TextBox txtDFDeg;
         private Button btnDFCalculate;
         private TextBox txtDFResult;
+        private TextBox txtClipboard;
+        private Label lblClipboard;
+        private Label lblGithub;
+        private Button btnClipboardCopy;
+        private Button btnPasteFromClipboard;
     }
 }

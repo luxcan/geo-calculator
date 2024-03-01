@@ -1,10 +1,11 @@
 using GeoCalculator.Codes.Model;
+using GeoCalculator.Codes.Util;
 using GeographicLib;
-using Microsoft.VisualBasic.Logging;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GeoCalculator {
     public partial class CalculatorForm : Form {
+        private Coordinates? clipboardCoordinates = null;
+
         public CalculatorForm() {
             InitializeComponent();
         }
@@ -73,16 +74,16 @@ namespace GeoCalculator {
         private void btnDFCalculate_Click(object sender, EventArgs e) {
             txtDFResult.Text = "";
 
-            _ = double.TryParse(txtDFX.Text, out double x);
-            _ = double.TryParse(txtDFY.Text, out double y);
-            _ = double.TryParse(txtDFZ.Text, out double z);
+            _ = double.TryParse(txtDFLat.Text, out double lat);
+            _ = double.TryParse(txtDFLng.Text, out double lng);
+            _ = double.TryParse(txtDFAltitude.Text, out double altitude);
             _ = double.TryParse(txtDFDistance.Text, out double distance);
             var baseCoordinates = new Coordinates();
-            baseCoordinates.SetGeocentric(x, y, z);
+            baseCoordinates.SetGeodetic(lat, lng, altitude);
 
             var degreeList = txtDFDeg.Text.Split(',');
             foreach (var degreeStr in degreeList) {
-                _ = int.TryParse(degreeStr, out int degree);
+                _ = double.TryParse(degreeStr, out double degree);
                 var newCoordinates = CalculateDistanceFrom(baseCoordinates, degree, distance);
 
                 // Display result
@@ -99,7 +100,7 @@ namespace GeoCalculator {
             }
         }
 
-        private Coordinates CalculateDistanceFrom(Coordinates baseCoordinates, int degree, double distanceInKM) {
+        private Coordinates CalculateDistanceFrom(Coordinates baseCoordinates, double degree, double distanceInKM) {
             var geod = Geodesic.WGS84;
             geod.Direct(baseCoordinates.Latitude, baseCoordinates.Longitude, degree, distanceInKM * 1000, out double newLat, out double newLon);
 
@@ -110,6 +111,32 @@ namespace GeoCalculator {
 
         private double Round(double value) {
             return Math.Round(value, 4);
+        }
+
+        private void btnClipboardCopy_Click(object sender, EventArgs e) {
+            var strLat = txtConvertLatOutput.Text;
+            var strLng = txtConvertLngOutput.Text;
+            var strAlt = txtConvertAltOutput.Text;
+
+            if (strLat == "" || strLng == "" || strAlt == "") {
+                MessageBox.Show("Empty coordinates.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            clipboardCoordinates = new Coordinates();
+            clipboardCoordinates.SetGeodetic(double.Parse(strLat), double.Parse(strLng), double.Parse(strAlt));
+            txtClipboard.Text = "Lat: " + clipboardCoordinates.Latitude + " | Lng: " + clipboardCoordinates.Longitude + " | Altitude: " + clipboardCoordinates.Altitude;
+        }
+
+        private void btnPasteFromClipboard_Click(object sender, EventArgs e) {
+            if (clipboardCoordinates == null) {
+                MessageBox.Show("No coordinates in clipboard.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            txtDFLat.Text = clipboardCoordinates.Latitude.ToString();
+            txtDFLng.Text = clipboardCoordinates.Longitude.ToString();
+            txtDFAltitude.Text = clipboardCoordinates.Altitude.ToString();
         }
     }
 }
