@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GeoCalculator/1.0.0": {
+        "dependencies": {
+          "GeographicLib.NET": "2.1.2"
+        },
+        "runtime": {
+          "GeoCalculator.dll": {}
+        }
+      },
+      "GeographicLib.NET/2.1.2": {
+        "runtime": {
+          "lib/net6.0/GeographicLib.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GeoCalculator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GeographicLib.NET/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WLdwj+X2kYW9GyIZnJoOWa1IPSI8amiKIvWB1D6Dgq7dewgo2CKXMnHZvCh7oo3CIGwCMEmNKWc5caUirifoTw==",
+      "path": "geographiclib.net/2.1.2",
+      "hashPath": "geographiclib.net.2.1.2.nupkg.sha512"
+    }
+  }
+}
