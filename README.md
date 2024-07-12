@@ -1,5 +1,5 @@
-I created this calculator due to the frequent need in my simulation work to:
-<br>i) Perform coordinate conversions, such as from geocentric to geodetic,
-<br>ii) Plan the next world coordinates according to the WGS84 standard, based on inputs for distance (in kilometers) and bearings.
+I created this calculator to meet my frequent need to perform the following tasks in my work:
+1. Perform coordinate conversions, such as from geocentric to geodetic.
+2. Plan the next coordinate from the initial target coordinate based on the distance/azimuth/elevation from the target coordinate.
 
 I hope you find this calculator as useful in your work as it has been in mine.
