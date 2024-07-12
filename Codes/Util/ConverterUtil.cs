@@ -14,15 +14,25 @@ namespace GeoCalculator.Codes.Util {
         }
 
         public static void GeodeticToDMS(Coordinates coordinates) {
+            // Process DMS Latitude
             coordinates.DMSLatitudeIsNorth = coordinates.Latitude >= 0;
-            coordinates.DMSLatitudeDegree = (int)coordinates.Latitude;
-            coordinates.DMSLatitudeMinute = (int)((coordinates.Latitude - coordinates.DMSLatitudeDegree) * 60);
-            coordinates.DMSLatitudeSecond = ((coordinates.Latitude - coordinates.DMSLatitudeDegree) * 60 - coordinates.DMSLatitudeMinute) * 60;
 
+            var absLatDegree = Math.Abs(coordinates.Latitude);
+            coordinates.DMSLatitudeDegree = (int)absLatDegree;
+
+            var absLatMin = (absLatDegree - coordinates.DMSLatitudeDegree) * 60;
+            coordinates.DMSLatitudeMinute = (int)absLatMin;
+            coordinates.DMSLatitudeSecond = (absLatMin - coordinates.DMSLatitudeMinute) * 60;
+
+            // Process DMS Longtitude
             coordinates.DMSLongitudeIsEast = coordinates.Longitude >= 0;
-            coordinates.DMSLongitudeDegree = (int)coordinates.Longitude;
-            coordinates.DMSLongitudeMinute = (int)((coordinates.Longitude - coordinates.DMSLongitudeDegree) * 60);
-            coordinates.DMSLongitudeSecond = ((coordinates.Longitude - coordinates.DMSLongitudeDegree) * 60 - coordinates.DMSLongitudeMinute) * 60;
+
+            var absLonDegree = Math.Abs(coordinates.Longitude);
+            coordinates.DMSLongitudeDegree = (int)absLonDegree;
+
+            var absLonMin = (absLonDegree - coordinates.DMSLongitudeDegree) * 60;
+            coordinates.DMSLongitudeMinute =(int)absLonMin;
+            coordinates.DMSLongitudeSecond = (absLonMin - coordinates.DMSLongitudeMinute)*60;
         }
 
         public static void DMSToGeodetic(Coordinates coordinates) {
