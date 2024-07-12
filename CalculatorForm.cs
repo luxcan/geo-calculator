@@ -1,5 +1,4 @@
 using GeoCalculator.Codes.Model;
-using GeoCalculator.Codes.Util;
 using GeographicLib;
 
 namespace GeoCalculator {
@@ -81,10 +80,22 @@ namespace GeoCalculator {
             var baseCoordinates = new Coordinates();
             baseCoordinates.SetGeodetic(lat, lng, altitude);
 
+            var elevationStr = txtDFElevation.Text.Trim();
+            double elevationAltitude = -1;
+            if (elevationStr != "" && int.TryParse(elevationStr, out int elevationAngle)) {
+                double elevationAngleRad = Math.PI * elevationAngle / 180.0;
+                double elevationVerticalDistance = distance * Math.Tan(elevationAngleRad);
+                elevationAltitude = altitude + elevationVerticalDistance;
+            }
+
             var degreeList = txtDFDeg.Text.Split(',');
             foreach (var degreeStr in degreeList) {
                 _ = double.TryParse(degreeStr, out double degree);
                 var newCoordinates = CalculateDistanceFrom(baseCoordinates, degree, distance);
+
+                if (elevationAltitude > 0) {
+                    newCoordinates.UpdateAltitude(elevationAltitude);
+                }
 
                 // Display result
                 txtDFResult.Text += $"Degree: {degree}°\r\n";
@@ -96,7 +107,7 @@ namespace GeoCalculator {
                 txtDFResult.Text += $"Altitude: {Round(newCoordinates.Altitude)}\r\n";
                 txtDFResult.Text += $"DMS Latitude: {newCoordinates.DMSLatitudeDegree}° {newCoordinates.DMSLatitudeMinute}' {Round(newCoordinates.DMSLatitudeSecond)}\" {(newCoordinates.DMSLatitudeIsNorth ? "N" : "S")}\r\n";
                 txtDFResult.Text += $"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n";
-                txtDFResult.Text += $"----------------------------------------\r\n";
+                txtDFResult.Text += $"---------------------------------------------------------------------------------------------\r\n";
             }
         }
 
