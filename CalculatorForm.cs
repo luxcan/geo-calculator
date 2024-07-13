@@ -71,7 +71,7 @@ namespace GeoCalculator {
         }
 
         private void btnDFCalculate_Click(object sender, EventArgs e) {
-            txtDFResult.Text = "";
+            txtDFRichResult.Text = "";
 
             _ = double.TryParse(txtDFLat.Text, out double lat);
             _ = double.TryParse(txtDFLng.Text, out double lng);
@@ -98,16 +98,21 @@ namespace GeoCalculator {
                 }
 
                 // Display result
-                txtDFResult.Text += $"Degree: {degree}°\r\n";
-                txtDFResult.Text += $"X: {Round(newCoordinates.X)}\r\n";
-                txtDFResult.Text += $"Y: {Round(newCoordinates.Y)}\r\n";
-                txtDFResult.Text += $"Z: {Round(newCoordinates.Z)}\r\n";
-                txtDFResult.Text += $"Latitude: {Round(newCoordinates.Latitude)}\r\n";
-                txtDFResult.Text += $"Longitude: {Round(newCoordinates.Longitude)}\r\n";
-                txtDFResult.Text += $"Altitude: {Round(newCoordinates.Altitude)}\r\n";
-                txtDFResult.Text += $"DMS Latitude: {newCoordinates.DMSLatitudeDegree}° {newCoordinates.DMSLatitudeMinute}' {Round(newCoordinates.DMSLatitudeSecond)}\" {(newCoordinates.DMSLatitudeIsNorth ? "N" : "S")}\r\n";
-                txtDFResult.Text += $"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n";
-                txtDFResult.Text += $"---------------------------------------------------------------------------------------------\r\n";
+                var conditionMsg = $"Azimuth: {degree}°";
+                var curIndex = txtDFRichResult.Text.Length > 0 ? txtDFRichResult.Text.Length - 1 : 0;
+                txtDFRichResult.AppendText(conditionMsg + "\r\n");
+                txtDFRichResult.Select(curIndex, conditionMsg.Length);
+                txtDFRichResult.SelectionFont = new Font(txtDFRichResult.Font, FontStyle.Bold);
+                txtDFRichResult.DeselectAll();
+                txtDFRichResult.AppendText($"X: {Round(newCoordinates.X)}\r\n");
+                txtDFRichResult.AppendText($"Y: {Round(newCoordinates.Y)}\r\n");
+                txtDFRichResult.AppendText($"Z: {Round(newCoordinates.Z)}\r\n");
+                txtDFRichResult.AppendText($"Latitude:  {Round(newCoordinates.Latitude)}\r\n");
+                txtDFRichResult.AppendText($"Longitude: {Round(newCoordinates.Longitude)}\r\n");
+                txtDFRichResult.AppendText($"Altitude:  {Round(newCoordinates.Altitude)}\r\n");
+                txtDFRichResult.AppendText($"DMS Latitude:    {newCoordinates.DMSLatitudeDegree}° {newCoordinates.DMSLatitudeMinute}' {Round(newCoordinates.DMSLatitudeSecond)}\" {(newCoordinates.DMSLatitudeIsNorth ? "N" : "S")}\r\n");
+                txtDFRichResult.AppendText($"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n");
+                txtDFRichResult.AppendText($"---------------------------------------------------------------------------------------------\r\n");
             }
         }
 

@@ -78,14 +78,16 @@
             lblConvertDMSLatDeg = new Label();
             txtConvertDMSLatDeg = new TextBox();
             tabDistance = new TabPage();
+            txtDFRichResult = new RichTextBox();
             grpDFConditions = new GroupBox();
+            txtDFElevation = new TextBox();
+            lblDFElevation = new Label();
             btnDFCalculate = new Button();
             btnPasteFromClipboard = new Button();
             txtDFDistance = new TextBox();
             lblDFDistance = new Label();
             txtDFDeg = new TextBox();
             lblDFDeg = new Label();
-            txtDFResult = new TextBox();
             grpDFInputs = new GroupBox();
             txtDFLat = new TextBox();
             lblDFLat = new Label();
@@ -96,8 +98,6 @@
             txtClipboard = new TextBox();
             lblClipboard = new Label();
             lblGithub = new Label();
-            lblDFElevation = new Label();
-            txtDFElevation = new TextBox();
             grpConvertGeocentricInputs.SuspendLayout();
             grpConvertOutputs.SuspendLayout();
             grpConvertLatLngInputs.SuspendLayout();
@@ -608,8 +608,8 @@
             // 
             // tabDistance
             // 
+            tabDistance.Controls.Add(txtDFRichResult);
             tabDistance.Controls.Add(grpDFConditions);
-            tabDistance.Controls.Add(txtDFResult);
             tabDistance.Controls.Add(grpDFInputs);
             tabDistance.Location = new Point(4, 24);
             tabDistance.Name = "tabDistance";
@@ -617,6 +617,15 @@
             tabDistance.TabIndex = 1;
             tabDistance.Text = "Distance From";
             tabDistance.UseVisualStyleBackColor = true;
+            // 
+            // txtDFRichResult
+            // 
+            txtDFRichResult.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDFRichResult.Location = new Point(350, 21);
+            txtDFRichResult.Name = "txtDFRichResult";
+            txtDFRichResult.Size = new Size(510, 279);
+            txtDFRichResult.TabIndex = 14;
+            txtDFRichResult.Text = "";
             // 
             // grpDFConditions
             // 
@@ -634,6 +643,22 @@
             grpDFConditions.TabIndex = 13;
             grpDFConditions.TabStop = false;
             grpDFConditions.Text = "Calculate Next Coordinate From Target";
+            // 
+            // txtDFElevation
+            // 
+            txtDFElevation.Location = new Point(152, 89);
+            txtDFElevation.Name = "txtDFElevation";
+            txtDFElevation.Size = new Size(158, 23);
+            txtDFElevation.TabIndex = 14;
+            // 
+            // lblDFElevation
+            // 
+            lblDFElevation.AutoSize = true;
+            lblDFElevation.Location = new Point(6, 92);
+            lblDFElevation.Name = "lblDFElevation";
+            lblDFElevation.Size = new Size(140, 15);
+            lblDFElevation.TabIndex = 17;
+            lblDFElevation.Text = "Elevation Angle (Degree):";
             // 
             // btnDFCalculate
             // 
@@ -681,20 +706,11 @@
             // lblDFDeg
             // 
             lblDFDeg.AutoSize = true;
-            lblDFDeg.Location = new Point(40, 56);
+            lblDFDeg.Location = new Point(43, 56);
             lblDFDeg.Name = "lblDFDeg";
-            lblDFDeg.Size = new Size(106, 15);
+            lblDFDeg.Size = new Size(103, 15);
             lblDFDeg.TabIndex = 14;
-            lblDFDeg.Text = "Direction (Degree):";
-            // 
-            // txtDFResult
-            // 
-            txtDFResult.Location = new Point(350, 14);
-            txtDFResult.Multiline = true;
-            txtDFResult.Name = "txtDFResult";
-            txtDFResult.ScrollBars = ScrollBars.Vertical;
-            txtDFResult.Size = new Size(510, 286);
-            txtDFResult.TabIndex = 12;
+            lblDFDeg.Text = "Azimuth (Degree):";
             // 
             // grpDFInputs
             // 
@@ -786,22 +802,6 @@
             lblGithub.TabIndex = 23;
             lblGithub.Text = "https://github.com/luxcan/geo-calculator";
             // 
-            // lblDFElevation
-            // 
-            lblDFElevation.AutoSize = true;
-            lblDFElevation.Location = new Point(6, 92);
-            lblDFElevation.Name = "lblDFElevation";
-            lblDFElevation.Size = new Size(140, 15);
-            lblDFElevation.TabIndex = 17;
-            lblDFElevation.Text = "Elevation Angle (Degree):";
-            // 
-            // txtDFElevation
-            // 
-            txtDFElevation.Location = new Point(152, 89);
-            txtDFElevation.Name = "txtDFElevation";
-            txtDFElevation.Size = new Size(158, 23);
-            txtDFElevation.TabIndex = 14;
-            // 
             // CalculatorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -827,7 +827,6 @@
             grpConvertDMSInputs.ResumeLayout(false);
             grpConvertDMSInputs.PerformLayout();
             tabDistance.ResumeLayout(false);
-            tabDistance.PerformLayout();
             grpDFConditions.ResumeLayout(false);
             grpDFConditions.PerformLayout();
             grpDFInputs.ResumeLayout(false);
@@ -903,7 +902,6 @@
         private Label lblDFDeg;
         private TextBox txtDFDeg;
         private Button btnDFCalculate;
-        private TextBox txtDFResult;
         private TextBox txtClipboard;
         private Label lblClipboard;
         private Label lblGithub;
@@ -912,5 +910,6 @@
         private GroupBox grpDFConditions;
         private Label lblDFElevation;
         private TextBox txtDFElevation;
+        private RichTextBox txtDFRichResult;
     }
 }
