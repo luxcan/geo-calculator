@@ -88,6 +88,10 @@ namespace GeoCalculator {
                 elevationAltitude = altitude + elevationVerticalDistance;
             }
 
+            var replaceText = cbDFReplaceText.Checked;
+            var replaceTextTemplate = txtDFReplaceText.Text;
+            _ = int.TryParse(txtDFReplaceRunningNo.Text, out int replaceRunningNo);
+
             var degreeList = txtDFDeg.Text.Split(',');
             foreach (var degreeStr in degreeList) {
                 _ = double.TryParse(degreeStr, out double degree);
@@ -97,22 +101,30 @@ namespace GeoCalculator {
                     newCoordinates.UpdateAltitude(elevationAltitude);
                 }
 
-                // Display result
-                var conditionMsg = $"Azimuth: {degree}°";
-                var curIndex = txtDFRichResult.Text.Length > 0 ? txtDFRichResult.Text.Length - 1 : 0;
-                txtDFRichResult.AppendText(conditionMsg + "\r\n");
-                txtDFRichResult.Select(curIndex, conditionMsg.Length);
-                txtDFRichResult.SelectionFont = new Font(txtDFRichResult.Font, FontStyle.Bold);
-                txtDFRichResult.DeselectAll();
-                txtDFRichResult.AppendText($"X: {Round(newCoordinates.X)}\r\n");
-                txtDFRichResult.AppendText($"Y: {Round(newCoordinates.Y)}\r\n");
-                txtDFRichResult.AppendText($"Z: {Round(newCoordinates.Z)}\r\n");
-                txtDFRichResult.AppendText($"Latitude:  {Round(newCoordinates.Latitude)}\r\n");
-                txtDFRichResult.AppendText($"Longitude: {Round(newCoordinates.Longitude)}\r\n");
-                txtDFRichResult.AppendText($"Altitude:  {Round(newCoordinates.Altitude)}\r\n");
-                txtDFRichResult.AppendText($"DMS Latitude:    {newCoordinates.DMSLatitudeDegree}° {newCoordinates.DMSLatitudeMinute}' {Round(newCoordinates.DMSLatitudeSecond)}\" {(newCoordinates.DMSLatitudeIsNorth ? "N" : "S")}\r\n");
-                txtDFRichResult.AppendText($"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n");
-                txtDFRichResult.AppendText($"---------------------------------------------------------------------------------------------\r\n");
+                if (!replaceText) {
+                    // Display result
+                    var conditionMsg = $"Azimuth: {degree}°";
+                    var curIndex = txtDFRichResult.Text.Length > 0 ? txtDFRichResult.Text.Length - 1 : 0;
+                    txtDFRichResult.AppendText(conditionMsg + "\r\n");
+                    txtDFRichResult.Select(curIndex, conditionMsg.Length);
+                    txtDFRichResult.SelectionFont = new Font(txtDFRichResult.Font, FontStyle.Bold);
+                    txtDFRichResult.DeselectAll();
+                    txtDFRichResult.AppendText($"X: {Round(newCoordinates.X)}\r\n");
+                    txtDFRichResult.AppendText($"Y: {Round(newCoordinates.Y)}\r\n");
+                    txtDFRichResult.AppendText($"Z: {Round(newCoordinates.Z)}\r\n");
+                    txtDFRichResult.AppendText($"Latitude:  {Round(newCoordinates.Latitude)}\r\n");
+                    txtDFRichResult.AppendText($"Longitude: {Round(newCoordinates.Longitude)}\r\n");
+                    txtDFRichResult.AppendText($"Altitude:  {Round(newCoordinates.Altitude)}\r\n");
+                    txtDFRichResult.AppendText($"DMS Latitude:    {newCoordinates.DMSLatitudeDegree}° {newCoordinates.DMSLatitudeMinute}' {Round(newCoordinates.DMSLatitudeSecond)}\" {(newCoordinates.DMSLatitudeIsNorth ? "N" : "S")}\r\n");
+                    txtDFRichResult.AppendText($"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n");
+                    txtDFRichResult.AppendText($"---------------------------------------------------------------------------------------------\r\n");
+                } else {
+                    var content = replaceTextTemplate.Replace("${lat}", Round(newCoordinates.Latitude).ToString())
+                        .Replace("${lon}", Round(newCoordinates.Longitude).ToString())
+                        .Replace("${altitude}", Round(newCoordinates.Altitude).ToString())
+                        .Replace("${runningNo}", (replaceRunningNo++).ToString());
+                    txtDFRichResult.AppendText(content + "\r\n");
+                }
             }
         }
 

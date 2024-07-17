@@ -78,6 +78,12 @@
             lblConvertDMSLatDeg = new Label();
             txtConvertDMSLatDeg = new TextBox();
             tabDistance = new TabPage();
+            grpDFReplaceText = new GroupBox();
+            txtDFReplaceRunningNo = new TextBox();
+            lblDFReplaceRunningNo = new Label();
+            cbDFReplaceText = new CheckBox();
+            txtDFReplaceText = new RichTextBox();
+            grpDFOutput = new GroupBox();
             txtDFRichResult = new RichTextBox();
             grpDFConditions = new GroupBox();
             txtDFElevation = new TextBox();
@@ -106,6 +112,8 @@
             tabConverter.SuspendLayout();
             grpConvertDMSInputs.SuspendLayout();
             tabDistance.SuspendLayout();
+            grpDFReplaceText.SuspendLayout();
+            grpDFOutput.SuspendLayout();
             grpDFConditions.SuspendLayout();
             grpDFInputs.SuspendLayout();
             SuspendLayout();
@@ -227,7 +235,7 @@
             // 
             // btnConvertGeocentric
             // 
-            btnConvertGeocentric.Location = new Point(59, 145);
+            btnConvertGeocentric.Location = new Point(59, 146);
             btnConvertGeocentric.Name = "btnConvertGeocentric";
             btnConvertGeocentric.Size = new Size(64, 25);
             btnConvertGeocentric.TabIndex = 9;
@@ -267,7 +275,7 @@
             grpConvertOutputs.Controls.Add(txtConvertXOutput);
             grpConvertOutputs.Controls.Add(txtConvertYOutput);
             grpConvertOutputs.Controls.Add(lblConvertYOutput);
-            grpConvertOutputs.Location = new Point(17, 186);
+            grpConvertOutputs.Location = new Point(17, 183);
             grpConvertOutputs.Name = "grpConvertOutputs";
             grpConvertOutputs.Size = new Size(619, 118);
             grpConvertOutputs.TabIndex = 11;
@@ -416,7 +424,7 @@
             // 
             // btnConvertLatLng
             // 
-            btnConvertLatLng.Location = new Point(247, 145);
+            btnConvertLatLng.Location = new Point(247, 146);
             btnConvertLatLng.Name = "btnConvertLatLng";
             btnConvertLatLng.Size = new Size(64, 25);
             btnConvertLatLng.TabIndex = 15;
@@ -430,7 +438,7 @@
             grpAddConditions.Controls.Add(txtAddAltitude);
             grpAddConditions.Location = new Point(651, 12);
             grpAddConditions.Name = "grpAddConditions";
-            grpAddConditions.Size = new Size(211, 292);
+            grpAddConditions.Size = new Size(219, 343);
             grpAddConditions.TabIndex = 16;
             grpAddConditions.TabStop = false;
             grpAddConditions.Text = "Additional Conditions";
@@ -442,7 +450,7 @@
             mainTab.Location = new Point(12, 12);
             mainTab.Name = "mainTab";
             mainTab.SelectedIndex = 0;
-            mainTab.Size = new Size(884, 342);
+            mainTab.Size = new Size(884, 389);
             mainTab.TabIndex = 17;
             // 
             // tabConverter
@@ -458,14 +466,14 @@
             tabConverter.Location = new Point(4, 24);
             tabConverter.Name = "tabConverter";
             tabConverter.Padding = new Padding(3);
-            tabConverter.Size = new Size(876, 314);
+            tabConverter.Size = new Size(876, 361);
             tabConverter.TabIndex = 0;
             tabConverter.Text = "Converter";
             tabConverter.UseVisualStyleBackColor = true;
             // 
             // btnConvertDMS
             // 
-            btnConvertDMS.Location = new Point(463, 145);
+            btnConvertDMS.Location = new Point(463, 146);
             btnConvertDMS.Name = "btnConvertDMS";
             btnConvertDMS.Size = new Size(64, 25);
             btnConvertDMS.TabIndex = 18;
@@ -608,22 +616,81 @@
             // 
             // tabDistance
             // 
-            tabDistance.Controls.Add(txtDFRichResult);
+            tabDistance.Controls.Add(grpDFReplaceText);
+            tabDistance.Controls.Add(grpDFOutput);
             tabDistance.Controls.Add(grpDFConditions);
             tabDistance.Controls.Add(grpDFInputs);
             tabDistance.Location = new Point(4, 24);
             tabDistance.Name = "tabDistance";
-            tabDistance.Size = new Size(876, 314);
+            tabDistance.Size = new Size(876, 361);
             tabDistance.TabIndex = 1;
             tabDistance.Text = "Distance From";
             tabDistance.UseVisualStyleBackColor = true;
             // 
+            // grpDFReplaceText
+            // 
+            grpDFReplaceText.Controls.Add(txtDFReplaceRunningNo);
+            grpDFReplaceText.Controls.Add(lblDFReplaceRunningNo);
+            grpDFReplaceText.Controls.Add(cbDFReplaceText);
+            grpDFReplaceText.Controls.Add(txtDFReplaceText);
+            grpDFReplaceText.Location = new Point(341, 223);
+            grpDFReplaceText.Name = "grpDFReplaceText";
+            grpDFReplaceText.Size = new Size(521, 135);
+            grpDFReplaceText.TabIndex = 16;
+            grpDFReplaceText.TabStop = false;
+            grpDFReplaceText.Text = "Replace Output";
+            // 
+            // txtDFReplaceRunningNo
+            // 
+            txtDFReplaceRunningNo.Location = new Point(404, 19);
+            txtDFReplaceRunningNo.Name = "txtDFReplaceRunningNo";
+            txtDFReplaceRunningNo.Size = new Size(109, 23);
+            txtDFReplaceRunningNo.TabIndex = 18;
+            // 
+            // lblDFReplaceRunningNo
+            // 
+            lblDFReplaceRunningNo.AutoSize = true;
+            lblDFReplaceRunningNo.Location = new Point(324, 23);
+            lblDFReplaceRunningNo.Name = "lblDFReplaceRunningNo";
+            lblDFReplaceRunningNo.Size = new Size(74, 15);
+            lblDFReplaceRunningNo.TabIndex = 17;
+            lblDFReplaceRunningNo.Text = "Running No:";
+            // 
+            // cbDFReplaceText
+            // 
+            cbDFReplaceText.AutoSize = true;
+            cbDFReplaceText.Location = new Point(8, 23);
+            cbDFReplaceText.Name = "cbDFReplaceText";
+            cbDFReplaceText.Size = new Size(195, 19);
+            cbDFReplaceText.TabIndex = 16;
+            cbDFReplaceText.Text = "Replace Output With Below Text";
+            cbDFReplaceText.UseVisualStyleBackColor = true;
+            // 
+            // txtDFReplaceText
+            // 
+            txtDFReplaceText.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDFReplaceText.Location = new Point(6, 48);
+            txtDFReplaceText.Name = "txtDFReplaceText";
+            txtDFReplaceText.Size = new Size(507, 81);
+            txtDFReplaceText.TabIndex = 15;
+            txtDFReplaceText.Text = "";
+            // 
+            // grpDFOutput
+            // 
+            grpDFOutput.Controls.Add(txtDFRichResult);
+            grpDFOutput.Location = new Point(341, 14);
+            grpDFOutput.Name = "grpDFOutput";
+            grpDFOutput.Size = new Size(521, 203);
+            grpDFOutput.TabIndex = 15;
+            grpDFOutput.TabStop = false;
+            grpDFOutput.Text = "Output";
+            // 
             // txtDFRichResult
             // 
             txtDFRichResult.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDFRichResult.Location = new Point(350, 21);
+            txtDFRichResult.Location = new Point(8, 22);
             txtDFRichResult.Name = "txtDFRichResult";
-            txtDFRichResult.Size = new Size(510, 279);
+            txtDFRichResult.Size = new Size(507, 175);
             txtDFRichResult.TabIndex = 14;
             txtDFRichResult.Text = "";
             // 
@@ -637,7 +704,7 @@
             grpDFConditions.Controls.Add(lblDFDistance);
             grpDFConditions.Controls.Add(txtDFDeg);
             grpDFConditions.Controls.Add(lblDFDeg);
-            grpDFConditions.Location = new Point(14, 144);
+            grpDFConditions.Location = new Point(14, 154);
             grpDFConditions.Name = "grpDFConditions";
             grpDFConditions.Size = new Size(321, 156);
             grpDFConditions.TabIndex = 13;
@@ -778,7 +845,7 @@
             // txtClipboard
             // 
             txtClipboard.BackColor = SystemColors.GradientInactiveCaption;
-            txtClipboard.Location = new Point(89, 356);
+            txtClipboard.Location = new Point(79, 401);
             txtClipboard.Margin = new Padding(2);
             txtClipboard.Name = "txtClipboard";
             txtClipboard.Size = new Size(556, 23);
@@ -787,7 +854,7 @@
             // lblClipboard
             // 
             lblClipboard.AutoSize = true;
-            lblClipboard.Location = new Point(15, 358);
+            lblClipboard.Location = new Point(12, 404);
             lblClipboard.Name = "lblClipboard";
             lblClipboard.Size = new Size(62, 15);
             lblClipboard.TabIndex = 22;
@@ -796,7 +863,7 @@
             // lblGithub
             // 
             lblGithub.AutoSize = true;
-            lblGithub.Location = new Point(657, 358);
+            lblGithub.Location = new Point(661, 409);
             lblGithub.Name = "lblGithub";
             lblGithub.Size = new Size(231, 15);
             lblGithub.TabIndex = 23;
@@ -806,11 +873,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(906, 382);
+            ClientSize = new Size(906, 433);
             Controls.Add(lblGithub);
             Controls.Add(lblClipboard);
             Controls.Add(txtClipboard);
             Controls.Add(mainTab);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CalculatorForm";
             Text = "Geo Calculator";
@@ -827,6 +895,9 @@
             grpConvertDMSInputs.ResumeLayout(false);
             grpConvertDMSInputs.PerformLayout();
             tabDistance.ResumeLayout(false);
+            grpDFReplaceText.ResumeLayout(false);
+            grpDFReplaceText.PerformLayout();
+            grpDFOutput.ResumeLayout(false);
             grpDFConditions.ResumeLayout(false);
             grpDFConditions.PerformLayout();
             grpDFInputs.ResumeLayout(false);
@@ -911,5 +982,11 @@
         private Label lblDFElevation;
         private TextBox txtDFElevation;
         private RichTextBox txtDFRichResult;
+        private GroupBox grpDFOutput;
+        private GroupBox grpDFReplaceText;
+        private RichTextBox txtDFReplaceText;
+        private CheckBox cbDFReplaceText;
+        private TextBox txtDFReplaceRunningNo;
+        private Label lblDFReplaceRunningNo;
     }
 }
