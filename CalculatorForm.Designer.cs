@@ -313,14 +313,14 @@
             lblConvertAltOutput.AutoSize = true;
             lblConvertAltOutput.Location = new Point(183, 80);
             lblConvertAltOutput.Name = "lblConvertAltOutput";
-            lblConvertAltOutput.Size = new Size(52, 15);
+            lblConvertAltOutput.Size = new Size(74, 15);
             lblConvertAltOutput.TabIndex = 22;
-            lblConvertAltOutput.Text = "Altitude:";
+            lblConvertAltOutput.Text = "Altitude (m):";
             // 
             // lblConvertLngOutput
             // 
             lblConvertLngOutput.AutoSize = true;
-            lblConvertLngOutput.Location = new Point(205, 51);
+            lblConvertLngOutput.Location = new Point(223, 51);
             lblConvertLngOutput.Name = "lblConvertLngOutput";
             lblConvertLngOutput.Size = new Size(30, 15);
             lblConvertLngOutput.TabIndex = 21;
@@ -329,7 +329,7 @@
             // lblConvertLatOutput
             // 
             lblConvertLatOutput.AutoSize = true;
-            lblConvertLatOutput.Location = new Point(209, 22);
+            lblConvertLatOutput.Location = new Point(227, 22);
             lblConvertLatOutput.Name = "lblConvertLatOutput";
             lblConvertLatOutput.Size = new Size(26, 15);
             lblConvertLatOutput.TabIndex = 20;
@@ -337,7 +337,7 @@
             // 
             // txtConvertAltOutput
             // 
-            txtConvertAltOutput.Location = new Point(241, 77);
+            txtConvertAltOutput.Location = new Point(263, 77);
             txtConvertAltOutput.Name = "txtConvertAltOutput";
             txtConvertAltOutput.ReadOnly = true;
             txtConvertAltOutput.Size = new Size(100, 23);
@@ -345,7 +345,7 @@
             // 
             // txtConvertLngOutput
             // 
-            txtConvertLngOutput.Location = new Point(241, 48);
+            txtConvertLngOutput.Location = new Point(263, 48);
             txtConvertLngOutput.Name = "txtConvertLngOutput";
             txtConvertLngOutput.ReadOnly = true;
             txtConvertLngOutput.Size = new Size(100, 23);
@@ -353,7 +353,7 @@
             // 
             // txtConvertLatOutput
             // 
-            txtConvertLatOutput.Location = new Point(241, 19);
+            txtConvertLatOutput.Location = new Point(263, 19);
             txtConvertLatOutput.Name = "txtConvertLatOutput";
             txtConvertLatOutput.ReadOnly = true;
             txtConvertLatOutput.Size = new Size(100, 23);
@@ -369,14 +369,14 @@
             grpConvertLatLngInputs.Controls.Add(lblConvertLat);
             grpConvertLatLngInputs.Location = new Point(186, 12);
             grpConvertLatLngInputs.Name = "grpConvertLatLngInputs";
-            grpConvertLatLngInputs.Size = new Size(185, 116);
+            grpConvertLatLngInputs.Size = new Size(207, 116);
             grpConvertLatLngInputs.TabIndex = 14;
             grpConvertLatLngInputs.TabStop = false;
             grpConvertLatLngInputs.Text = "Lat/Lng";
             // 
             // txtConvertAlt
             // 
-            txtConvertAlt.Location = new Point(72, 80);
+            txtConvertAlt.Location = new Point(94, 80);
             txtConvertAlt.Name = "txtConvertAlt";
             txtConvertAlt.Size = new Size(100, 23);
             txtConvertAlt.TabIndex = 18;
@@ -386,13 +386,13 @@
             lblConvertAlt.AutoSize = true;
             lblConvertAlt.Location = new Point(14, 83);
             lblConvertAlt.Name = "lblConvertAlt";
-            lblConvertAlt.Size = new Size(52, 15);
+            lblConvertAlt.Size = new Size(74, 15);
             lblConvertAlt.TabIndex = 17;
-            lblConvertAlt.Text = "Altitude:";
+            lblConvertAlt.Text = "Altitude (m):";
             // 
             // txtConvertLng
             // 
-            txtConvertLng.Location = new Point(72, 51);
+            txtConvertLng.Location = new Point(94, 51);
             txtConvertLng.Name = "txtConvertLng";
             txtConvertLng.Size = new Size(100, 23);
             txtConvertLng.TabIndex = 16;
@@ -400,7 +400,7 @@
             // lblConvertLng
             // 
             lblConvertLng.AutoSize = true;
-            lblConvertLng.Location = new Point(36, 54);
+            lblConvertLng.Location = new Point(58, 54);
             lblConvertLng.Name = "lblConvertLng";
             lblConvertLng.Size = new Size(30, 15);
             lblConvertLng.TabIndex = 6;
@@ -408,7 +408,7 @@
             // 
             // txtConvertLat
             // 
-            txtConvertLat.Location = new Point(72, 22);
+            txtConvertLat.Location = new Point(94, 19);
             txtConvertLat.Name = "txtConvertLat";
             txtConvertLat.Size = new Size(100, 23);
             txtConvertLat.TabIndex = 15;
@@ -416,7 +416,7 @@
             // lblConvertLat
             // 
             lblConvertLat.AutoSize = true;
-            lblConvertLat.Location = new Point(40, 25);
+            lblConvertLat.Location = new Point(62, 25);
             lblConvertLat.Name = "lblConvertLat";
             lblConvertLat.Size = new Size(26, 15);
             lblConvertLat.TabIndex = 15;
@@ -497,9 +497,9 @@
             grpConvertDMSInputs.Controls.Add(txtConvertDMSLatMin);
             grpConvertDMSInputs.Controls.Add(lblConvertDMSLatDeg);
             grpConvertDMSInputs.Controls.Add(txtConvertDMSLatDeg);
-            grpConvertDMSInputs.Location = new Point(392, 12);
+            grpConvertDMSInputs.Location = new Point(399, 12);
             grpConvertDMSInputs.Name = "grpConvertDMSInputs";
-            grpConvertDMSInputs.Size = new Size(244, 116);
+            grpConvertDMSInputs.Size = new Size(237, 116);
             grpConvertDMSInputs.TabIndex = 17;
             grpConvertDMSInputs.TabStop = false;
             grpConvertDMSInputs.Text = "DMS";
@@ -796,7 +796,7 @@
             // 
             // txtDFLat
             // 
-            txtDFLat.Location = new Point(71, 22);
+            txtDFLat.Location = new Point(93, 22);
             txtDFLat.Name = "txtDFLat";
             txtDFLat.Size = new Size(158, 23);
             txtDFLat.TabIndex = 1;
@@ -804,7 +804,7 @@
             // lblDFLat
             // 
             lblDFLat.AutoSize = true;
-            lblDFLat.Location = new Point(39, 25);
+            lblDFLat.Location = new Point(61, 25);
             lblDFLat.Name = "lblDFLat";
             lblDFLat.Size = new Size(26, 15);
             lblDFLat.TabIndex = 0;
@@ -815,14 +815,14 @@
             lblDFAltitude.AutoSize = true;
             lblDFAltitude.Location = new Point(13, 83);
             lblDFAltitude.Name = "lblDFAltitude";
-            lblDFAltitude.Size = new Size(52, 15);
+            lblDFAltitude.Size = new Size(74, 15);
             lblDFAltitude.TabIndex = 4;
-            lblDFAltitude.Text = "Altitude:";
+            lblDFAltitude.Text = "Altitude (m):";
             // 
             // lblDFLng
             // 
             lblDFLng.AutoSize = true;
-            lblDFLng.Location = new Point(35, 54);
+            lblDFLng.Location = new Point(57, 54);
             lblDFLng.Name = "lblDFLng";
             lblDFLng.Size = new Size(30, 15);
             lblDFLng.TabIndex = 2;
@@ -830,14 +830,14 @@
             // 
             // txtDFAltitude
             // 
-            txtDFAltitude.Location = new Point(71, 80);
+            txtDFAltitude.Location = new Point(93, 80);
             txtDFAltitude.Name = "txtDFAltitude";
             txtDFAltitude.Size = new Size(158, 23);
             txtDFAltitude.TabIndex = 5;
             // 
             // txtDFLng
             // 
-            txtDFLng.Location = new Point(71, 51);
+            txtDFLng.Location = new Point(93, 51);
             txtDFLng.Name = "txtDFLng";
             txtDFLng.Size = new Size(158, 23);
             txtDFLng.TabIndex = 3;
@@ -865,7 +865,7 @@
             lblGithub.AutoSize = true;
             lblGithub.Location = new Point(661, 409);
             lblGithub.Name = "lblGithub";
-            lblGithub.Size = new Size(231, 15);
+            lblGithub.Size = new Size(230, 15);
             lblGithub.TabIndex = 23;
             lblGithub.Text = "https://github.com/luxcan/geo-calculator";
             // 

@@ -114,7 +114,7 @@ namespace GeoCalculator {
                     txtDFRichResult.AppendText($"Z: {Round(newCoordinates.Z)}\r\n");
                     txtDFRichResult.AppendText($"Latitude:  {Round(newCoordinates.Latitude)}\r\n");
                     txtDFRichResult.AppendText($"Longitude: {Round(newCoordinates.Longitude)}\r\n");
-                    txtDFRichResult.AppendText($"Altitude:  {Round(newCoordinates.Altitude)}\r\n");
+                    txtDFRichResult.AppendText($"Altitude (m):  {Round(newCoordinates.Altitude)}\r\n");
                     txtDFRichResult.AppendText($"DMS Latitude:    {newCoordinates.DMSLatitudeDegree}° {newCoordinates.DMSLatitudeMinute}' {Round(newCoordinates.DMSLatitudeSecond)}\" {(newCoordinates.DMSLatitudeIsNorth ? "N" : "S")}\r\n");
                     txtDFRichResult.AppendText($"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n");
                     txtDFRichResult.AppendText($"---------------------------------------------------------------------------------------------\r\n");
