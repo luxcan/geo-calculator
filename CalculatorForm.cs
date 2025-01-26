@@ -7,6 +7,14 @@ namespace GeoCalculator {
 
         public CalculatorForm() {
             InitializeComponent();
+
+            tipIconDFAzimuth.Image = SystemIcons.Information.ToBitmap();
+            tipIconDFAzimuth.SizeMode = PictureBoxSizeMode.Zoom;
+            tipDFAzimuth.SetToolTip(tipIconDFAzimuth, "Generate multiple coordinates with different azimuths by using a comma (,) as the delimiter.\nFor example, to generate coordinates at 0 degrees and 90 degrees from the target, enter 0,90.");
+
+            tipIconDFReplaceOutput.Image = SystemIcons.Information.ToBitmap();
+            tipIconDFReplaceOutput.SizeMode = PictureBoxSizeMode.Zoom;
+            tipDFReplaceOutput.SetToolTip(tipIconDFReplaceOutput, "Insert the following placeholders into the output where you want the\ncorresponding values to appear:\n - ${x}: X-coordinate\n - ${y}: Y-coordinate\n - ${z}: Z-coordinate\n - ${lat}: Latitude\n - ${lon}: Longitude\n - ${altitude}: Altitude\n - ${runningNo}: A sequence of running numbers");
         }
 
         private void btnConvertGencentric_Click(object sender, EventArgs e) {
@@ -119,7 +127,10 @@ namespace GeoCalculator {
                     txtDFRichResult.AppendText($"DMS Longitude: {newCoordinates.DMSLongitudeDegree}° {newCoordinates.DMSLongitudeMinute}' {Round(newCoordinates.DMSLongitudeSecond)}\" {(newCoordinates.DMSLongitudeIsEast ? "E" : "W")}\r\n");
                     txtDFRichResult.AppendText($"---------------------------------------------------------------------------------------------\r\n");
                 } else {
-                    var content = replaceTextTemplate.Replace("${lat}", Round(newCoordinates.Latitude).ToString())
+                    var content = replaceTextTemplate.Replace("${x}", Round(newCoordinates.X).ToString())
+                        .Replace("${y}", Round(newCoordinates.Y).ToString())
+                        .Replace("${z}", Round(newCoordinates.Z).ToString())
+                        .Replace("${lat}", Round(newCoordinates.Latitude).ToString())
                         .Replace("${lon}", Round(newCoordinates.Longitude).ToString())
                         .Replace("${altitude}", Round(newCoordinates.Altitude).ToString())
                         .Replace("${runningNo}", (replaceRunningNo++).ToString());

@@ -23,6 +23,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             lblConvertX = new Label();
             txtConvertX = new TextBox();
@@ -86,6 +87,7 @@
             grpDFOutput = new GroupBox();
             txtDFRichResult = new RichTextBox();
             grpDFConditions = new GroupBox();
+            tipIconDFAzimuth = new PictureBox();
             txtDFElevation = new TextBox();
             lblDFElevation = new Label();
             btnDFCalculate = new Button();
@@ -104,6 +106,9 @@
             txtClipboard = new TextBox();
             lblClipboard = new Label();
             lblGithub = new Label();
+            tipDFReplaceOutput = new ToolTip(components);
+            tipDFAzimuth = new ToolTip(components);
+            tipIconDFReplaceOutput = new PictureBox();
             grpConvertGeocentricInputs.SuspendLayout();
             grpConvertOutputs.SuspendLayout();
             grpConvertLatLngInputs.SuspendLayout();
@@ -115,7 +120,9 @@
             grpDFReplaceText.SuspendLayout();
             grpDFOutput.SuspendLayout();
             grpDFConditions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tipIconDFAzimuth).BeginInit();
             grpDFInputs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tipIconDFReplaceOutput).BeginInit();
             SuspendLayout();
             // 
             // lblConvertX
@@ -629,6 +636,7 @@
             // 
             // grpDFReplaceText
             // 
+            grpDFReplaceText.Controls.Add(tipIconDFReplaceOutput);
             grpDFReplaceText.Controls.Add(txtDFReplaceRunningNo);
             grpDFReplaceText.Controls.Add(lblDFReplaceRunningNo);
             grpDFReplaceText.Controls.Add(cbDFReplaceText);
@@ -696,6 +704,7 @@
             // 
             // grpDFConditions
             // 
+            grpDFConditions.Controls.Add(tipIconDFAzimuth);
             grpDFConditions.Controls.Add(txtDFElevation);
             grpDFConditions.Controls.Add(lblDFElevation);
             grpDFConditions.Controls.Add(btnDFCalculate);
@@ -710,6 +719,14 @@
             grpDFConditions.TabIndex = 13;
             grpDFConditions.TabStop = false;
             grpDFConditions.Text = "Calculate Next Coordinate From Target";
+            // 
+            // tipIconDFAzimuth
+            // 
+            tipIconDFAzimuth.Location = new Point(129, 56);
+            tipIconDFAzimuth.Name = "tipIconDFAzimuth";
+            tipIconDFAzimuth.Size = new Size(17, 17);
+            tipIconDFAzimuth.TabIndex = 18;
+            tipIconDFAzimuth.TabStop = false;
             // 
             // txtDFElevation
             // 
@@ -773,7 +790,7 @@
             // lblDFDeg
             // 
             lblDFDeg.AutoSize = true;
-            lblDFDeg.Location = new Point(43, 56);
+            lblDFDeg.Location = new Point(23, 56);
             lblDFDeg.Name = "lblDFDeg";
             lblDFDeg.Size = new Size(103, 15);
             lblDFDeg.TabIndex = 14;
@@ -869,6 +886,14 @@
             lblGithub.TabIndex = 23;
             lblGithub.Text = "https://github.com/luxcan/geo-calculator";
             // 
+            // tipIconDFReplaceOutput
+            // 
+            tipIconDFReplaceOutput.Location = new Point(200, 22);
+            tipIconDFReplaceOutput.Name = "tipIconDFReplaceOutput";
+            tipIconDFReplaceOutput.Size = new Size(17, 17);
+            tipIconDFReplaceOutput.TabIndex = 19;
+            tipIconDFReplaceOutput.TabStop = false;
+            // 
             // CalculatorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -900,8 +925,10 @@
             grpDFOutput.ResumeLayout(false);
             grpDFConditions.ResumeLayout(false);
             grpDFConditions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tipIconDFAzimuth).EndInit();
             grpDFInputs.ResumeLayout(false);
             grpDFInputs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tipIconDFReplaceOutput).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -988,5 +1015,9 @@
         private CheckBox cbDFReplaceText;
         private TextBox txtDFReplaceRunningNo;
         private Label lblDFReplaceRunningNo;
+        private ToolTip tipDFReplaceOutput;
+        private ToolTip tipDFAzimuth;
+        private PictureBox tipIconDFAzimuth;
+        private PictureBox tipIconDFReplaceOutput;
     }
 }
