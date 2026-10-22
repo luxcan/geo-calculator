@@ -52,11 +52,5 @@ namespace GeoCalculator.Codes.Model {
             ConverterUtil.DMSToGeodetic(this);
             ConverterUtil.GeodeticToGeocentric(this);
         }
-
-        public void UpdateAltitude(double newAltitude) {
-            Altitude = newAltitude;
-            ConverterUtil.GeodeticToGeocentric(this);
-            ConverterUtil.GeodeticToDMS(this);
-        }
     }
 }

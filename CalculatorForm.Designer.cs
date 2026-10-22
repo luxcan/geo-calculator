@@ -108,6 +108,7 @@
             lblGithub = new Label();
             tipDFReplaceOutput = new ToolTip(components);
             tipDFAzimuth = new ToolTip(components);
+            tipDFInputs = new ToolTip(components);
             tipIconDFReplaceOutput = new PictureBox();
             grpConvertGeocentricInputs.SuspendLayout();
             grpConvertOutputs.SuspendLayout();
@@ -1017,6 +1018,7 @@
         private Label lblDFReplaceRunningNo;
         private ToolTip tipDFReplaceOutput;
         private ToolTip tipDFAzimuth;
+        private ToolTip tipDFInputs;
         private PictureBox tipIconDFAzimuth;
         private PictureBox tipIconDFReplaceOutput;
     }
