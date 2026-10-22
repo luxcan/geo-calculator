@@ -5,16 +5,42 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCalculator", "GeoCalculator.csproj", "{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCalculator.Tests", "GeoCalculator.Tests\GeoCalculator.Tests.csproj", "{8C04E021-D8AB-4681-9833-41AF20B0768A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Debug|x64.Build.0 = Debug|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Debug|x86.Build.0 = Debug|Any CPU
 		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Release|x64.ActiveCfg = Release|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Release|x64.Build.0 = Release|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Release|x86.ActiveCfg = Release|Any CPU
+		{D0F8D29B-C86A-4CFA-B845-3D532B8E1219}.Release|x86.Build.0 = Release|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Debug|x64.Build.0 = Debug|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Debug|x86.Build.0 = Debug|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Release|x64.ActiveCfg = Release|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Release|x64.Build.0 = Release|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Release|x86.ActiveCfg = Release|Any CPU
+		{8C04E021-D8AB-4681-9833-41AF20B0768A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
