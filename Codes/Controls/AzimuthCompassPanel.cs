@@ -1,5 +1,6 @@
 ﻿using GeoCalculator.Codes.Model;
 using GeoCalculator.Codes.Util;
+using System.ComponentModel;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Globalization;
@@ -72,8 +73,10 @@ namespace GeoCalculator.Codes.Controls {
         public event EventHandler<int>? RayClicked;
 
         /// <summary>
-        /// Index of the highlighted azimuth, or -1 for none.
+        /// Index of the highlighted azimuth, or -1 for none. Runtime state only, so the designer never saves it.
         /// </summary>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex {
             get => selectedIndex;
             set {

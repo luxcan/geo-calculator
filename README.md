@@ -1,12 +1,10 @@
 # Geo Calculator
 
-I created this calculator to meet my frequent need to perform the following tasks in my work:
-1. Perform coordinate conversions, such as from geocentric to geodetic.
-2. Plan the next coordinate from the initial target coordinate based on the distance/azimuth/elevation from the target coordinate.
+I created this calculator because my work often needs two things: converting coordinates between different forms (for example, from geocentric to geodetic), and planning the next coordinate from a target coordinate using a distance, azimuth and elevation angle from that target.
 
-I hope you find this calculator as useful in your work as it has been in mine.
+It is a small Windows desktop tool, written in C#, that prepares WGS84 coordinates. The geodesy is done by [GeographicLib](https://geographiclib.sourceforge.io/) (GeographicLib.NET).
 
-It is a small Windows desktop tool, written in C# with Windows Forms, that prepares WGS84 coordinates for simulation scenarios such as MAK VR-Forces and HLA (RPR FOM). The geodesy is done by [GeographicLib](https://geographiclib.sourceforge.io/) (GeographicLib.NET).
+I hope you find it as useful in your work as it has been in mine.
 
 ## Conventions
 
@@ -113,8 +111,8 @@ For example, the text `Entity_${runningNo} ${lat} ${lon} ${altitude}` with Runni
 ## Requirements
 
 - Windows (64-bit).
-- To run the standalone build: nothing else. Make it with the publish command below. The `GeoCalculator.zip` in the repository holds an older build (August 2024). It lacks most of what is described here (azimuth Range, preview, Show, input checking), and the parts it does have, such as the elevation angle, work differently, so do not use it.
-- To build from source: the .NET SDK 8 or later. The solution includes the unit tests, which target .NET 8 and need the .NET 8 Desktop Runtime to run. The app itself targets .NET 6 (`net6.0-windows`); newer SDKs build it with a NETSDK1138 "out of support" warning, which is expected. A normal build is written to `bin/Release/net6.0-windows/GeoCalculator.exe` and needs the .NET 6 Desktop Runtime to run.
+- To run the app: nothing else. Download `GeoCalculator.exe` from the [1.0.0 release](https://github.com/luxcan/geo-calculator/releases/tag/v1.0.0) on GitHub and run it. It is a standalone build, so .NET does not need to be installed. The same file can also be made from source with the publish command below.
+- To build from source: the .NET SDK 10 or later. The app and its unit tests target .NET 10 (`net10.0-windows`). A normal build is written to `bin/Release/net10.0-windows/GeoCalculator.exe` and needs the .NET 10 Desktop Runtime to run. The tests use xUnit v3 on Microsoft.Testing.Platform, which `global.json` selects for `dotnet test`.
 
 ## Build, test and publish
 
@@ -123,10 +121,10 @@ dotnet build GeoCalculator.sln -c Release
 ```
 
 ```bash
-dotnet test GeoCalculator.Tests/GeoCalculator.Tests.csproj -c Release
+dotnet test --project GeoCalculator.Tests/GeoCalculator.Tests.csproj -c Release
 ```
 
-To make a standalone single-file `GeoCalculator.exe` that runs without .NET installed (about 66 MB, written to `bin/Publish/win-x64`):
+To make a standalone single-file `GeoCalculator.exe` that runs without .NET installed (about 50 MB, written to `bin/Publish/win-x64`):
 
 ```bash
 dotnet publish GeoCalculator.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -p:DebugType=None -o bin/Publish/win-x64
@@ -146,8 +144,8 @@ dotnet publish GeoCalculator.csproj -c Release -r win-x64 --self-contained true 
 | `Codes/Util/AzimuthPlanBuilder.cs` | The List and Range rules |
 | `Codes/Util/InputUtil.cs` | Parsing and checking of typed numbers |
 | `Codes/Controls/AzimuthCompassPanel.cs`, `PreviewStyle.cs` | The compass preview and its colours |
-| `GeoCalculator.Tests/` | Unit tests (xUnit) for the azimuth List and Range rules, compass point names and number echoing |
-| `GeoCalculator.zip` | An older published exe (August 2024) |
+| `GeoCalculator.Tests/` | Unit tests (xUnit v3) for the azimuth List and Range rules, compass point names and number echoing |
+| `global.json` | Selects Microsoft.Testing.Platform for `dotnet test` (needed by xUnit v3 on the .NET 10 SDK) |
 
 ## Accuracy notes
 
